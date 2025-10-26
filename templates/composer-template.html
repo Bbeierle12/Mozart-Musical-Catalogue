@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{COMPOSER_NAME}} - Complete Works Catalogue</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/composer.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="composer-header">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a> /
+            <a href="../index.html">Composers</a> /
+            <span>{{COMPOSER_NAME}}</span>
+        </nav>
+
+        <div class="composer-hero">
+            <div class="composer-portrait">
+                <img src="../../assets/images/{{COMPOSER_ID}}-portrait.jpg" alt="{{COMPOSER_NAME}}">
+            </div>
+            <div class="composer-details">
+                <h1>{{COMPOSER_NAME}}</h1>
+                <p class="composer-dates">{{BIRTH_YEAR}} - {{DEATH_YEAR}}</p>
+                <p class="composer-nationality">{{NATIONALITY}}</p>
+                <p class="composer-period">{{PERIOD}} Period</p>
+                <p class="catalog-system">Catalogue: {{CATALOG_NAME}} ({{CATALOG_ABBREV}})</p>
+                <div class="composer-stats">
+                    <span class="stat-badge">{{TOTAL_WORKS}} Works</span>
+                    <span class="stat-badge">{{TOTAL_RECORDINGS}} Recordings</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="composer-nav">
+            <ul>
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#works">Complete Works</a></li>
+                <li><a href="#genres">By Genre</a></li>
+                <li><a href="#recordings">Recordings</a></li>
+                <li><a href="#manuscripts">Manuscripts</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="composer-content">
+        <!-- Overview Section -->
+        <section id="overview" class="content-section">
+            <h2>Biography</h2>
+            <div class="biography">
+                {{BIOGRAPHY_TEXT}}
+            </div>
+
+            <div class="key-works">
+                <h3>Key Works</h3>
+                <div class="works-grid">
+                    {{KEY_WORKS_LIST}}
+                </div>
+            </div>
+        </section>
+
+        <!-- Complete Works Section -->
+        <section id="works" class="content-section">
+            <h2>Complete Works Catalogue</h2>
+
+            <div class="works-filter">
+                <div class="filter-group">
+                    <label for="genre-filter">Genre:</label>
+                    <select id="genre-filter">
+                        <option value="">All Genres</option>
+                        {{GENRE_OPTIONS}}
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="period-filter">Period:</label>
+                    <select id="period-filter">
+                        <option value="">All Periods</option>
+                        {{PERIOD_OPTIONS}}
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="search-works">Search:</label>
+                    <input type="text" id="search-works" placeholder="Search works...">
+                </div>
+                <button class="btn-filter" onclick="filterWorks()">Apply Filters</button>
+                <button class="btn-reset" onclick="resetFilters()">Reset</button>
+            </div>
+
+            <div class="works-table-container">
+                <table class="works-table">
+                    <thead>
+                        <tr>
+                            <th>Catalogue No.</th>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Key</th>
+                            <th>Year</th>
+                            <th>Instrumentation</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="works-tbody">
+                        {{WORKS_TABLE_ROWS}}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button class="btn-prev" onclick="previousPage()">Previous</button>
+                <span class="page-info">Page <span id="current-page">1</span> of <span id="total-pages">{{TOTAL_PAGES}}</span></span>
+                <button class="btn-next" onclick="nextPage()">Next</button>
+            </div>
+        </section>
+
+        <!-- Works by Genre -->
+        <section id="genres" class="content-section">
+            <h2>Works by Genre</h2>
+            <div class="genre-categories">
+                {{GENRE_CATEGORIES}}
+            </div>
+        </section>
+
+        <!-- Recordings Section -->
+        <section id="recordings" class="content-section">
+            <h2>Recordings</h2>
+            <div class="recordings-intro">
+                <p>Explore historical and modern recordings of {{COMPOSER_NAME}}'s works.</p>
+            </div>
+
+            <div class="recordings-filter">
+                <button class="btn-filter-type active" data-type="all">All Recordings</button>
+                <button class="btn-filter-type" data-type="historical">Historical</button>
+                <button class="btn-filter-type" data-type="modern">Modern</button>
+                <button class="btn-filter-type" data-type="complete">Complete Sets</button>
+            </div>
+
+            <div class="recordings-grid">
+                {{RECORDINGS_LIST}}
+            </div>
+        </section>
+
+        <!-- Manuscripts Section -->
+        <section id="manuscripts" class="content-section">
+            <h2>Manuscripts & Sources</h2>
+            <div class="manuscripts-info">
+                <p>Original manuscripts and primary sources for {{COMPOSER_NAME}}'s works.</p>
+            </div>
+
+            <div class="manuscripts-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Work</th>
+                            <th>Manuscript Type</th>
+                            <th>Location</th>
+                            <th>Digital Access</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{MANUSCRIPTS_TABLE}}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="content-section">
+            <h2>Life & Works Timeline</h2>
+            <div class="timeline-container">
+                {{TIMELINE_EVENTS}}
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="content-section">
+            <h2>Resources & References</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Scholarly Editions</h3>
+                    <ul>
+                        {{EDITIONS_LIST}}
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Bibliography</h3>
+                    <ul>
+                        {{BIBLIOGRAPHY_LIST}}
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Online Resources</h3>
+                    <ul>
+                        {{ONLINE_RESOURCES}}
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Societies & Organizations</h3>
+                    <ul>
+                        {{ORGANIZATIONS_LIST}}
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="composer-footer">
+        <div class="footer-nav">
+            <a href="../../index.html">Home</a> |
+            <a href="../index.html">All Composers</a> |
+            <a href="#top">Back to Top</a>
+        </div>
+        <div class="footer-info">
+            <p>Last Updated: {{LAST_UPDATED}}</p>
+            <p>© 2024 Early Composers Musical Catalogue - Educational Use</p>
+        </div>
+    </footer>
+
+    <!-- Work Detail Modal Template -->
+    <div id="work-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeWorkModal()">&times;</span>
+            <h2 id="modal-title">Work Title</h2>
+            <div id="modal-details">
+                <!-- Work details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../assets/js/composer-common.js"></script>
+    <script src="composer-data.js"></script>
+    <script>
+        // Initialize composer-specific data
+        initializeComposer('{{COMPOSER_ID}}');
+    </script>
+</body>
+</html>

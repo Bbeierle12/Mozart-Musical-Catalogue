@@ -1,0 +1,461 @@
+{
+  "composer": {
+    "id": "bach",
+    "fullName": "Johann Sebastian Bach",
+    "lastName": "Bach",
+    "firstName": "Johann Sebastian",
+    "birthDate": "1685-03-31",
+    "birthPlace": "Eisenach, Thuringia",
+    "deathDate": "1750-07-28",
+    "deathPlace": "Leipzig, Saxony",
+    "nationality": "German",
+    "period": "Baroque",
+    "catalogPrefix": "BWV",
+    "totalWorks": 1128,
+    "biography": "Johann Sebastian Bach was a German composer and musician of the Baroque period. He is known for instrumental compositions such as the Brandenburg Concertos and the Goldberg Variations, and for vocal music such as the St Matthew Passion and the Mass in B minor."
+  },
+  "catalogSystem": {
+    "name": "Bach-Werke-Verzeichnis",
+    "abbreviation": "BWV",
+    "author": "Wolfgang Schmieder",
+    "publicationYear": 1950,
+    "revisionYear": 1990,
+    "description": "The Bach-Werke-Verzeichnis (Bach Works Catalogue) is the numbering system identifying compositions by Johann Sebastian Bach."
+  },
+  "categories": {
+    "cantatas": {
+      "name": "Cantatas",
+      "bwvRange": "1-224",
+      "description": "Sacred and secular cantatas",
+      "subcategories": {
+        "sacred": {
+          "name": "Sacred Cantatas",
+          "bwvRange": "1-200",
+          "count": 200
+        },
+        "secular": {
+          "name": "Secular Cantatas",
+          "bwvRange": "201-224",
+          "count": 24
+        }
+      }
+    },
+    "motets": {
+      "name": "Motets",
+      "bwvRange": "225-231",
+      "description": "Sacred choral works",
+      "count": 7
+    },
+    "masses": {
+      "name": "Masses and Mass Sections",
+      "bwvRange": "232-243",
+      "description": "Mass settings and individual movements",
+      "count": 12
+    },
+    "passions": {
+      "name": "Passions and Oratorios",
+      "bwvRange": "244-249",
+      "description": "Large-scale sacred dramatic works",
+      "count": 6
+    },
+    "chorales": {
+      "name": "Four-Part Chorales",
+      "bwvRange": "250-438",
+      "description": "Harmonized chorales",
+      "count": 189
+    },
+    "songs": {
+      "name": "Songs and Arias",
+      "bwvRange": "439-524",
+      "description": "Sacred and secular songs",
+      "count": 86
+    },
+    "organ": {
+      "name": "Organ Works",
+      "bwvRange": "525-771",
+      "description": "Works for organ",
+      "subcategories": {
+        "sonatas": {
+          "name": "Trio Sonatas",
+          "bwvRange": "525-530",
+          "count": 6
+        },
+        "preludes_fugues": {
+          "name": "Preludes and Fugues",
+          "bwvRange": "531-582",
+          "count": 52
+        },
+        "chorales": {
+          "name": "Chorale Settings",
+          "bwvRange": "599-771",
+          "count": 173
+        }
+      }
+    },
+    "keyboard": {
+      "name": "Keyboard Works",
+      "bwvRange": "772-994",
+      "description": "Works for harpsichord and clavichord",
+      "subcategories": {
+        "inventions": {
+          "name": "Inventions and Sinfonias",
+          "bwvRange": "772-801",
+          "count": 30
+        },
+        "wtc": {
+          "name": "Well-Tempered Clavier",
+          "bwvRange": "846-893",
+          "count": 48
+        },
+        "suites": {
+          "name": "Suites",
+          "bwvRange": "806-830",
+          "count": 25
+        },
+        "partitas": {
+          "name": "Partitas",
+          "bwvRange": "825-830",
+          "count": 6
+        },
+        "variations": {
+          "name": "Goldberg Variations",
+          "bwvRange": "988",
+          "count": 1
+        }
+      }
+    },
+    "chamber": {
+      "name": "Chamber Music",
+      "bwvRange": "995-1040",
+      "description": "Works for solo instruments and small ensembles",
+      "subcategories": {
+        "violin": {
+          "name": "Works for Violin",
+          "bwvRange": "1001-1006",
+          "count": 6
+        },
+        "cello": {
+          "name": "Cello Suites",
+          "bwvRange": "1007-1012",
+          "count": 6
+        },
+        "flute": {
+          "name": "Works for Flute",
+          "bwvRange": "1013-1035",
+          "count": 23
+        }
+      }
+    },
+    "orchestral": {
+      "name": "Orchestral Works",
+      "bwvRange": "1041-1071",
+      "description": "Concertos and orchestral suites",
+      "subcategories": {
+        "concertos": {
+          "name": "Concertos",
+          "bwvRange": "1041-1065",
+          "count": 25
+        },
+        "brandenburg": {
+          "name": "Brandenburg Concertos",
+          "bwvRange": "1046-1051",
+          "count": 6
+        },
+        "suites": {
+          "name": "Orchestral Suites",
+          "bwvRange": "1066-1071",
+          "count": 6
+        }
+      }
+    },
+    "canons": {
+      "name": "Canons and Late Works",
+      "bwvRange": "1072-1128",
+      "description": "Canons, Musical Offering, Art of Fugue",
+      "subcategories": {
+        "art_of_fugue": {
+          "name": "The Art of Fugue",
+          "bwvRange": "1080",
+          "count": 1
+        },
+        "musical_offering": {
+          "name": "Musical Offering",
+          "bwvRange": "1079",
+          "count": 1
+        }
+      }
+    }
+  },
+  "works": [
+    {
+      "bwv": "232",
+      "title": "Mass in B minor",
+      "category": "masses",
+      "yearComposed": 1749,
+      "key": "B minor",
+      "movements": 27,
+      "duration": 110,
+      "instrumentation": "SSATB soloists, SSATB choir, orchestra",
+      "description": "Bach's final and greatest mass setting"
+    },
+    {
+      "bwv": "244",
+      "title": "St. Matthew Passion",
+      "germanTitle": "Matthäus-Passion",
+      "category": "passions",
+      "yearComposed": 1727,
+      "key": "Multiple",
+      "movements": 68,
+      "duration": 165,
+      "instrumentation": "Double choir, double orchestra, soloists",
+      "description": "Passion setting for Good Friday"
+    },
+    {
+      "bwv": "245",
+      "title": "St. John Passion",
+      "germanTitle": "Johannes-Passion",
+      "category": "passions",
+      "yearComposed": 1724,
+      "key": "Multiple",
+      "movements": 40,
+      "duration": 120,
+      "instrumentation": "SATB soloists, SATB choir, orchestra",
+      "description": "Passion setting based on John's Gospel"
+    },
+    {
+      "bwv": "988",
+      "title": "Goldberg Variations",
+      "germanTitle": "Goldberg-Variationen",
+      "category": "keyboard",
+      "yearComposed": 1741,
+      "key": "G major",
+      "movements": 32,
+      "duration": 80,
+      "instrumentation": "Harpsichord (or piano)",
+      "description": "Aria with 30 variations"
+    },
+    {
+      "bwv": "1046",
+      "title": "Brandenburg Concerto No. 1",
+      "category": "orchestral",
+      "yearComposed": 1721,
+      "key": "F major",
+      "movements": 4,
+      "duration": 22,
+      "instrumentation": "2 horns, 3 oboes, bassoon, violino piccolo, strings, continuo"
+    },
+    {
+      "bwv": "1047",
+      "title": "Brandenburg Concerto No. 2",
+      "category": "orchestral",
+      "yearComposed": 1721,
+      "key": "F major",
+      "movements": 3,
+      "duration": 12,
+      "instrumentation": "Trumpet, recorder, oboe, violin, strings, continuo"
+    },
+    {
+      "bwv": "1048",
+      "title": "Brandenburg Concerto No. 3",
+      "category": "orchestral",
+      "yearComposed": 1721,
+      "key": "G major",
+      "movements": 3,
+      "duration": 11,
+      "instrumentation": "3 violins, 3 violas, 3 cellos, continuo"
+    },
+    {
+      "bwv": "1049",
+      "title": "Brandenburg Concerto No. 4",
+      "category": "orchestral",
+      "yearComposed": 1721,
+      "key": "G major",
+      "movements": 3,
+      "duration": 16,
+      "instrumentation": "Violin, 2 recorders, strings, continuo"
+    },
+    {
+      "bwv": "1050",
+      "title": "Brandenburg Concerto No. 5",
+      "category": "orchestral",
+      "yearComposed": 1721,
+      "key": "D major",
+      "movements": 3,
+      "duration": 22,
+      "instrumentation": "Flute, violin, harpsichord, strings, continuo"
+    },
+    {
+      "bwv": "1051",
+      "title": "Brandenburg Concerto No. 6",
+      "category": "orchestral",
+      "yearComposed": 1721,
+      "key": "B-flat major",
+      "movements": 3,
+      "duration": 18,
+      "instrumentation": "2 violas, 2 violas da gamba, cello, continuo"
+    },
+    {
+      "bwv": "1007",
+      "title": "Cello Suite No. 1",
+      "category": "chamber",
+      "yearComposed": 1720,
+      "key": "G major",
+      "movements": 6,
+      "duration": 18,
+      "instrumentation": "Solo cello",
+      "movementList": ["Prelude", "Allemande", "Courante", "Sarabande", "Menuets I & II", "Gigue"]
+    },
+    {
+      "bwv": "1008",
+      "title": "Cello Suite No. 2",
+      "category": "chamber",
+      "yearComposed": 1720,
+      "key": "D minor",
+      "movements": 6,
+      "duration": 20,
+      "instrumentation": "Solo cello"
+    },
+    {
+      "bwv": "1009",
+      "title": "Cello Suite No. 3",
+      "category": "chamber",
+      "yearComposed": 1720,
+      "key": "C major",
+      "movements": 6,
+      "duration": 22,
+      "instrumentation": "Solo cello"
+    },
+    {
+      "bwv": "1010",
+      "title": "Cello Suite No. 4",
+      "category": "chamber",
+      "yearComposed": 1720,
+      "key": "E-flat major",
+      "movements": 6,
+      "duration": 24,
+      "instrumentation": "Solo cello"
+    },
+    {
+      "bwv": "1011",
+      "title": "Cello Suite No. 5",
+      "category": "chamber",
+      "yearComposed": 1720,
+      "key": "C minor",
+      "movements": 6,
+      "duration": 26,
+      "instrumentation": "Solo cello (scordatura)"
+    },
+    {
+      "bwv": "1012",
+      "title": "Cello Suite No. 6",
+      "category": "chamber",
+      "yearComposed": 1720,
+      "key": "D major",
+      "movements": 6,
+      "duration": 28,
+      "instrumentation": "Solo cello (5 strings)"
+    },
+    {
+      "bwv": "1080",
+      "title": "The Art of Fugue",
+      "germanTitle": "Die Kunst der Fuge",
+      "category": "canons",
+      "yearComposed": 1750,
+      "key": "D minor",
+      "movements": 20,
+      "duration": 90,
+      "instrumentation": "Unspecified (keyboard or ensemble)",
+      "description": "Bach's final masterwork, unfinished at his death"
+    },
+    {
+      "bwv": "1079",
+      "title": "Musical Offering",
+      "germanTitle": "Musikalisches Opfer",
+      "category": "canons",
+      "yearComposed": 1747,
+      "key": "C minor",
+      "movements": 13,
+      "duration": 50,
+      "instrumentation": "Various combinations",
+      "description": "Based on a theme by Frederick the Great"
+    }
+  ],
+  "manuscripts": {
+    "autographs": [
+      {
+        "work": "BWV 232",
+        "location": "Staatsbibliothek zu Berlin",
+        "catalogRef": "Mus. ms. Bach P 180",
+        "digitized": true,
+        "url": "https://digital.staatsbibliothek-berlin.de"
+      },
+      {
+        "work": "BWV 244",
+        "location": "Staatsbibliothek zu Berlin",
+        "catalogRef": "Mus. ms. Bach P 25",
+        "digitized": true
+      },
+      {
+        "work": "BWV 988",
+        "location": "Staatsbibliothek zu Berlin",
+        "catalogRef": "Mus. ms. Bach P 226",
+        "digitized": true
+      }
+    ]
+  },
+  "recordings": {
+    "historical": [
+      {
+        "work": "BWV 232",
+        "conductor": "Karl Richter",
+        "ensemble": "Münchener Bach-Orchester",
+        "year": 1961,
+        "label": "Archiv Produktion"
+      },
+      {
+        "work": "BWV 988",
+        "performer": "Glenn Gould",
+        "year": 1955,
+        "label": "Columbia Masterworks",
+        "note": "Landmark recording that launched Gould's career"
+      }
+    ],
+    "modern": [
+      {
+        "work": "BWV 1046-1051",
+        "conductor": "Trevor Pinnock",
+        "ensemble": "The English Concert",
+        "year": 1982,
+        "label": "Archiv Produktion",
+        "type": "Period instruments"
+      },
+      {
+        "work": "BWV 1007-1012",
+        "performer": "Yo-Yo Ma",
+        "year": 2018,
+        "label": "Sony Classical",
+        "note": "Third complete recording"
+      }
+    ]
+  },
+  "bibliography": [
+    {
+      "author": "Christoph Wolff",
+      "title": "Johann Sebastian Bach: The Learned Musician",
+      "year": 2000,
+      "publisher": "W. W. Norton"
+    },
+    {
+      "author": "Albert Schweitzer",
+      "title": "J. S. Bach",
+      "year": 1908,
+      "publisher": "Breitkopf & Härtel"
+    },
+    {
+      "author": "David Yearsley",
+      "title": "Bach and the Meanings of Counterpoint",
+      "year": 2002,
+      "publisher": "Cambridge University Press"
+    }
+  ]
+}

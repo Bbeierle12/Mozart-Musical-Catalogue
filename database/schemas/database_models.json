@@ -1,0 +1,454 @@
+{
+  "database": "Early Composers Musical Catalogue",
+  "version": "1.0.0",
+  "models": {
+    "Composer": {
+      "tableName": "composers",
+      "fields": {
+        "composer_id": {
+          "type": "integer",
+          "primaryKey": true,
+          "autoIncrement": true
+        },
+        "full_name": {
+          "type": "string",
+          "maxLength": 255,
+          "required": true
+        },
+        "last_name": {
+          "type": "string",
+          "maxLength": 100,
+          "required": true,
+          "index": true
+        },
+        "first_name": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "birth_date": {
+          "type": "date"
+        },
+        "birth_place": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "death_date": {
+          "type": "date"
+        },
+        "death_place": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "nationality": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "period": {
+          "type": "enum",
+          "values": ["Renaissance", "Baroque", "Classical", "Early Romantic", "Romantic", "Transitional"],
+          "index": true
+        },
+        "catalog_prefix": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "biography": {
+          "type": "text"
+        },
+        "image_url": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "active": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "relationships": {
+        "works": {
+          "type": "hasMany",
+          "model": "Work",
+          "foreignKey": "composer_id"
+        },
+        "catalog_systems": {
+          "type": "hasMany",
+          "model": "CatalogSystem",
+          "foreignKey": "composer_id"
+        }
+      }
+    },
+    "Work": {
+      "tableName": "works",
+      "fields": {
+        "work_id": {
+          "type": "integer",
+          "primaryKey": true,
+          "autoIncrement": true
+        },
+        "composer_id": {
+          "type": "integer",
+          "required": true,
+          "foreignKey": {
+            "references": "composers",
+            "field": "composer_id"
+          }
+        },
+        "catalog_number": {
+          "type": "string",
+          "maxLength": 50,
+          "required": true,
+          "index": true
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 500,
+          "required": true
+        },
+        "subtitle": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "alternate_titles": {
+          "type": "array",
+          "items": "string"
+        },
+        "genre": {
+          "type": "enum",
+          "values": [
+            "Symphony",
+            "Concerto",
+            "Sonata",
+            "Chamber Music",
+            "String Quartet",
+            "Piano Trio",
+            "Opera",
+            "Oratorio",
+            "Cantata",
+            "Mass",
+            "Requiem",
+            "Motet",
+            "Lied",
+            "Art Song",
+            "Suite",
+            "Overture",
+            "Ballet",
+            "Divertimento",
+            "Serenade",
+            "Variations",
+            "Fugue",
+            "Prelude",
+            "Etude",
+            "Nocturne",
+            "Waltz",
+            "March",
+            "Dance",
+            "Sacred Music",
+            "Secular Music",
+            "Orchestral",
+            "Keyboard",
+            "Vocal",
+            "Choral",
+            "Instrumental"
+          ],
+          "index": true
+        },
+        "key_signature": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "year_composed": {
+          "type": "integer",
+          "index": true
+        },
+        "instrumentation": {
+          "type": "text"
+        },
+        "scoring_details": {
+          "type": "json",
+          "schema": {
+            "strings": {
+              "violin1": "integer",
+              "violin2": "integer",
+              "viola": "integer",
+              "cello": "integer",
+              "bass": "integer"
+            },
+            "woodwinds": {
+              "flute": "integer",
+              "oboe": "integer",
+              "clarinet": "integer",
+              "bassoon": "integer"
+            },
+            "brass": {
+              "horn": "integer",
+              "trumpet": "integer",
+              "trombone": "integer",
+              "tuba": "integer"
+            },
+            "percussion": {
+              "timpani": "boolean",
+              "other": "array"
+            },
+            "keyboard": {
+              "piano": "boolean",
+              "harpsichord": "boolean",
+              "organ": "boolean"
+            },
+            "voices": {
+              "soprano": "integer",
+              "alto": "integer",
+              "tenor": "integer",
+              "bass": "integer",
+              "choir": "boolean"
+            },
+            "soloists": "array"
+          }
+        },
+        "duration_minutes": {
+          "type": "integer"
+        },
+        "number_of_movements": {
+          "type": "integer"
+        }
+      },
+      "relationships": {
+        "composer": {
+          "type": "belongsTo",
+          "model": "Composer",
+          "foreignKey": "composer_id"
+        },
+        "movements": {
+          "type": "hasMany",
+          "model": "Movement",
+          "foreignKey": "work_id"
+        },
+        "recordings": {
+          "type": "hasMany",
+          "model": "Recording",
+          "foreignKey": "work_id"
+        },
+        "manuscripts": {
+          "type": "hasMany",
+          "model": "Manuscript",
+          "foreignKey": "work_id"
+        },
+        "editions": {
+          "type": "hasMany",
+          "model": "Edition",
+          "foreignKey": "work_id"
+        }
+      }
+    },
+    "Recording": {
+      "tableName": "recordings",
+      "fields": {
+        "recording_id": {
+          "type": "integer",
+          "primaryKey": true,
+          "autoIncrement": true
+        },
+        "work_id": {
+          "type": "integer",
+          "required": true,
+          "foreignKey": {
+            "references": "works",
+            "field": "work_id"
+          }
+        },
+        "recording_title": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "recording_type": {
+          "type": "enum",
+          "values": ["Studio", "Live", "Historical", "Broadcast", "Archival"]
+        },
+        "conductor": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "soloists": {
+          "type": "array",
+          "items": "string"
+        },
+        "ensemble": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "recording_year": {
+          "type": "integer",
+          "index": true
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "catalog_number": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "format": {
+          "type": "enum",
+          "values": ["CD", "Digital", "LP", "78rpm", "Cassette", "SACD", "DVD-Audio", "Blu-ray Audio"]
+        },
+        "audio_quality": {
+          "type": "enum",
+          "values": ["Mono", "Stereo", "Remastered", "Hi-Res", "DSD", "Surround"]
+        },
+        "rating": {
+          "type": "decimal",
+          "precision": 3,
+          "scale": 2,
+          "min": 0,
+          "max": 5
+        },
+        "is_complete": {
+          "type": "boolean",
+          "default": true
+        },
+        "is_historical": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "relationships": {
+        "work": {
+          "type": "belongsTo",
+          "model": "Work",
+          "foreignKey": "work_id"
+        },
+        "streaming_links": {
+          "type": "hasMany",
+          "model": "StreamingLink",
+          "foreignKey": "recording_id"
+        },
+        "performers": {
+          "type": "manyToMany",
+          "model": "Performer",
+          "through": "recording_performers"
+        }
+      }
+    },
+    "Movement": {
+      "tableName": "movements",
+      "fields": {
+        "movement_id": {
+          "type": "integer",
+          "primaryKey": true,
+          "autoIncrement": true
+        },
+        "work_id": {
+          "type": "integer",
+          "required": true,
+          "foreignKey": {
+            "references": "works",
+            "field": "work_id"
+          }
+        },
+        "movement_number": {
+          "type": "integer",
+          "required": true
+        },
+        "movement_title": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "tempo_marking": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "time_signature": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "key_signature": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "duration_seconds": {
+          "type": "integer"
+        }
+      },
+      "relationships": {
+        "work": {
+          "type": "belongsTo",
+          "model": "Work",
+          "foreignKey": "work_id"
+        }
+      }
+    },
+    "StreamingLink": {
+      "tableName": "streaming_links",
+      "fields": {
+        "link_id": {
+          "type": "integer",
+          "primaryKey": true,
+          "autoIncrement": true
+        },
+        "recording_id": {
+          "type": "integer",
+          "required": true,
+          "foreignKey": {
+            "references": "recordings",
+            "field": "recording_id"
+          }
+        },
+        "platform": {
+          "type": "enum",
+          "values": ["Spotify", "Apple Music", "YouTube", "YouTube Music", "Amazon Music", "Tidal", "Deezer", "Qobuz", "Idagio", "Primephonic"]
+        },
+        "platform_url": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "platform_id": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "is_free": {
+          "type": "boolean",
+          "default": false
+        },
+        "region_restricted": {
+          "type": "boolean",
+          "default": false
+        },
+        "active": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "relationships": {
+        "recording": {
+          "type": "belongsTo",
+          "model": "Recording",
+          "foreignKey": "recording_id"
+        }
+      }
+    }
+  },
+  "api_endpoints": {
+    "composers": {
+      "list": "GET /api/composers",
+      "detail": "GET /api/composers/:id",
+      "works": "GET /api/composers/:id/works",
+      "recordings": "GET /api/composers/:id/recordings"
+    },
+    "works": {
+      "list": "GET /api/works",
+      "detail": "GET /api/works/:id",
+      "movements": "GET /api/works/:id/movements",
+      "recordings": "GET /api/works/:id/recordings",
+      "search": "GET /api/works/search?q=:query"
+    },
+    "recordings": {
+      "list": "GET /api/recordings",
+      "detail": "GET /api/recordings/:id",
+      "streaming": "GET /api/recordings/:id/streaming"
+    },
+    "search": {
+      "global": "GET /api/search?q=:query",
+      "advanced": "POST /api/search/advanced"
+    }
+  }
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Composers Musical Catalogue</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/composers.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Early Composers Musical Catalogue</h1>
+            <p class="subtitle">A Comprehensive Digital Archive of Classical Music</p>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#composers">Composers</a></li>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Explore the Masters of Classical Music</h2>
+                <p>From Baroque to Early Romantic Period</p>
+                <div class="quick-search">
+                    <input type="text" id="quick-search" placeholder="Search composers, works, or catalogue numbers...">
+                    <button onclick="performQuickSearch()">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Composers Grid -->
+        <section id="composers" class="composers-section">
+            <h2>Featured Composers</h2>
+            <div class="composers-grid">
+                <!-- Tier 1 Composers -->
+                <div class="composer-card tier-1" data-composer="mozart">
+                    <div class="composer-image">
+                        <img src="assets/images/mozart-portrait.jpg" alt="Wolfgang Amadeus Mozart">
+                    </div>
+                    <div class="composer-info">
+                        <h3>Wolfgang Amadeus Mozart</h3>
+                        <p class="years">1756 - 1791</p>
+                        <p class="period">Classical Period</p>
+                        <p class="catalog">Köchel Catalogue (K)</p>
+                        <p class="works-count">626 works</p>
+                        <a href="composers/mozart/index.html" class="btn-explore">Explore Catalogue</a>
+                    </div>
+                    <div class="composer-status">
+                        <span class="status-complete">Complete</span>
+                    </div>
+                </div>
+
+                <div class="composer-card tier-1" data-composer="bach">
+                    <div class="composer-image">
+                        <img src="assets/images/bach-portrait.jpg" alt="Johann Sebastian Bach">
+                    </div>
+                    <div class="composer-info">
+                        <h3>Johann Sebastian Bach</h3>
+                        <p class="years">1685 - 1750</p>
+                        <p class="period">Baroque Period</p>
+                        <p class="catalog">BWV Catalogue</p>
+                        <p class="works-count">~1,100 works</p>
+                        <a href="composers/bach/index.html" class="btn-explore">Explore Catalogue</a>
+                    </div>
+                    <div class="composer-status">
+                        <span class="status-progress">In Progress</span>
+                    </div>
+                </div>
+
+                <div class="composer-card tier-1" data-composer="handel">
+                    <div class="composer-image">
+                        <img src="assets/images/handel-portrait.jpg" alt="George Frideric Handel">
+                    </div>
+                    <div class="composer-info">
+                        <h3>George Frideric Handel</h3>
+                        <p class="years">1685 - 1759</p>
+                        <p class="period">Baroque Period</p>
+                        <p class="catalog">HWV Catalogue</p>
+                        <p class="works-count">~600 works</p>
+                        <a href="composers/handel/index.html" class="btn-explore">Explore Catalogue</a>
+                    </div>
+                    <div class="composer-status">
+                        <span class="status-planned">Planned</span>
+                    </div>
+                </div>
+
+                <div class="composer-card tier-1" data-composer="vivaldi">
+                    <div class="composer-image">
+                        <img src="assets/images/vivaldi-portrait.jpg" alt="Antonio Vivaldi">
+                    </div>
+                    <div class="composer-info">
+                        <h3>Antonio Vivaldi</h3>
+                        <p class="years">1678 - 1741</p>
+                        <p class="period">Baroque Period</p>
+                        <p class="catalog">RV Catalogue</p>
+                        <p class="works-count">~800 works</p>
+                        <a href="composers/vivaldi/index.html" class="btn-explore">Explore Catalogue</a>
+                    </div>
+                    <div class="composer-status">
+                        <span class="status-planned">Planned</span>
+                    </div>
+                </div>
+
+                <div class="composer-card tier-1" data-composer="haydn">
+                    <div class="composer-image">
+                        <img src="assets/images/haydn-portrait.jpg" alt="Joseph Haydn">
+                    </div>
+                    <div class="composer-info">
+                        <h3>Joseph Haydn</h3>
+                        <p class="years">1732 - 1809</p>
+                        <p class="period">Classical Period</p>
+                        <p class="catalog">Hoboken Catalogue</p>
+                        <p class="works-count">~750 works</p>
+                        <a href="composers/haydn/index.html" class="btn-explore">Explore Catalogue</a>
+                    </div>
+                    <div class="composer-status">
+                        <span class="status-planned">Planned</span>
+                    </div>
+                </div>
+
+                <!-- Future Tier 2 Composers (Initially Hidden) -->
+                <div class="composer-card tier-2 hidden" data-composer="beethoven">
+                    <div class="composer-info">
+                        <h3>Ludwig van Beethoven</h3>
+                        <p class="years">1770 - 1827</p>
+                        <p class="period">Classical/Romantic</p>
+                        <p class="catalog">Op./WoO</p>
+                        <a href="#" class="btn-explore disabled">Coming Soon</a>
+                    </div>
+                </div>
+
+                <div class="composer-card tier-2 hidden" data-composer="schubert">
+                    <div class="composer-info">
+                        <h3>Franz Schubert</h3>
+                        <p class="years">1797 - 1828</p>
+                        <p class="period">Early Romantic</p>
+                        <p class="catalog">D. Catalogue</p>
+                        <a href="#" class="btn-explore disabled">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-show-more" onclick="toggleTier2()">Show More Composers</button>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="statistics-section">
+            <h2>Catalogue Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Composers</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3,876</span>
+                    <span class="stat-label">Total Works</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1,247</span>
+                    <span class="stat-label">Recordings</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">458</span>
+                    <span class="stat-label">Manuscripts</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Preview -->
+        <section id="timeline" class="timeline-section">
+            <h2>Historical Timeline</h2>
+            <div class="timeline-preview">
+                <div class="timeline-container">
+                    <div class="timeline-bar">
+                        <div class="composer-lifespan" style="left: 10%; width: 8%;" data-composer="vivaldi">
+                            <span>Vivaldi (1678-1741)</span>
+                        </div>
+                        <div class="composer-lifespan" style="left: 15%; width: 8%;" data-composer="bach">
+                            <span>Bach (1685-1750)</span>
+                        </div>
+                        <div class="composer-lifespan" style="left: 15%; width: 9%;" data-composer="handel">
+                            <span>Handel (1685-1759)</span>
+                        </div>
+                        <div class="composer-lifespan" style="left: 35%; width: 10%;" data-composer="haydn">
+                            <span>Haydn (1732-1809)</span>
+                        </div>
+                        <div class="composer-lifespan" style="left: 40%; width: 4%;" data-composer="mozart">
+                            <span>Mozart (1756-1791)</span>
+                        </div>
+                    </div>
+                    <div class="timeline-years">
+                        <span>1650</span>
+                        <span>1700</span>
+                        <span>1750</span>
+                        <span>1800</span>
+                        <span>1850</span>
+                    </div>
+                </div>
+            </div>
+            <a href="timeline.html" class="btn-explore-timeline">Explore Full Timeline</a>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources-section">
+            <h2>Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Catalog Systems</h3>
+                    <p>Understanding musical cataloguing systems</p>
+                    <a href="resources/catalog-systems.html">Learn More</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Bibliography</h3>
+                    <p>Scholarly sources and references</p>
+                    <a href="resources/bibliography.html">View Sources</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Manuscripts</h3>
+                    <p>Original manuscript locations</p>
+                    <a href="resources/manuscripts.html">Explore</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Recording Labels</h3>
+                    <p>Historical and modern recordings</p>
+                    <a href="resources/recordings.html">Browse</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>About This Project</h2>
+            <div class="about-content">
+                <p>The Early Composers Musical Catalogue is a comprehensive digital archive dedicated to preserving and presenting the complete works of major composers from the Baroque through Early Romantic periods.</p>
+                <p>Our mission is to provide scholars, musicians, and music enthusiasts with accurate, detailed, and accessible information about classical music's greatest masterworks.</p>
+                <div class="about-features">
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Complete work catalogues with detailed metadata</li>
+                        <li>Historical and modern recording information</li>
+                        <li>Manuscript locations and digitization links</li>
+                        <li>Advanced search and filtering capabilities</li>
+                        <li>Educational resources and listening guides</li>
+                        <li>Integration with streaming platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#composers">Composers</a></li>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Composers</h4>
+                <ul>
+                    <li><a href="composers/mozart/index.html">Mozart</a></li>
+                    <li><a href="composers/bach/index.html">Bach</a></li>
+                    <li><a href="composers/handel/index.html">Handel</a></li>
+                    <li><a href="composers/vivaldi/index.html">Vivaldi</a></li>
+                    <li><a href="composers/haydn/index.html">Haydn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="resources/catalog-systems.html">Catalog Systems</a></li>
+                    <li><a href="resources/bibliography.html">Bibliography</a></li>
+                    <li><a href="resources/manuscripts.html">Manuscripts</a></li>
+                    <li><a href="resources/recordings.html">Recordings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>For corrections or contributions, please contact us.</p>
+                <p>This is an educational resource.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Early Composers Musical Catalogue. Educational Use Only.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
