@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordings Database - Early Composers Catalogue</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/recordings.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> /
+            <span>Recordings Database</span>
+        </nav>
+
+        <div class="header-content">
+            <h1>Classical Recordings Database</h1>
+            <p class="subtitle">Historical and Modern Recordings with Streaming Links</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Search and Filter Section -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="composer-filter">Composer:</label>
+                    <select id="composer-filter">
+                        <option value="">All Composers</option>
+                        <option value="Bach">Bach</option>
+                        <option value="Mozart">Mozart</option>
+                        <option value="Handel">Handel</option>
+                        <option value="Vivaldi">Vivaldi</option>
+                        <option value="Haydn">Haydn</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="work-filter">Work:</label>
+                    <input type="text" id="work-filter" placeholder="Search by work title or BWV...">
+                </div>
+
+                <div class="filter-group">
+                    <label for="performer-filter">Performer:</label>
+                    <input type="text" id="performer-filter" placeholder="Search performers...">
+                </div>
+
+                <div class="filter-group">
+                    <label for="year-filter">Recording Year:</label>
+                    <select id="year-filter">
+                        <option value="">All Years</option>
+                        <option value="historical">Historical (pre-1980)</option>
+                        <option value="1980s">1980-1989</option>
+                        <option value="1990s">1990-1999</option>
+                        <option value="2000s">2000-2009</option>
+                        <option value="2010s">2010-2019</option>
+                        <option value="2020s">2020-present</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="platform-filter">Streaming Platform:</label>
+                    <select id="platform-filter">
+                        <option value="">All Platforms</option>
+                        <option value="Spotify">Spotify</option>
+                        <option value="Apple Music">Apple Music</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="Tidal">Tidal</option>
+                        <option value="Amazon Music">Amazon Music</option>
+                        <option value="Qobuz">Qobuz</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="btn-apply" onclick="applyFilters()">Apply Filters</button>
+                    <button class="btn-reset" onclick="resetFilters()">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number" id="total-recordings">0</span>
+                    <span class="stat-label">Total Recordings</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-performers">0</span>
+                    <span class="stat-label">Performers</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="streaming-platforms">6</span>
+                    <span class="stat-label">Platforms</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="avg-rating">4.8</span>
+                    <span class="stat-label">Avg Rating</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recordings Grid -->
+        <section class="recordings-section">
+            <h2>Featured Recordings</h2>
+            <div class="view-options">
+                <button class="view-btn active" data-view="grid" onclick="changeView('grid')">
+                    <span>⊞</span> Grid View
+                </button>
+                <button class="view-btn" data-view="list" onclick="changeView('list')">
+                    <span>☰</span> List View
+                </button>
+                <button class="view-btn" data-view="compare" onclick="changeView('compare')">
+                    <span>⊡</span> Compare
+                </button>
+            </div>
+
+            <div id="recordings-container" class="recordings-grid">
+                <!-- Recordings will be loaded here -->
+            </div>
+
+            <div class="pagination">
+                <button class="btn-prev" onclick="previousPage()">Previous</button>
+                <span class="page-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                <button class="btn-next" onclick="nextPage()">Next</button>
+            </div>
+        </section>
+
+        <!-- Recording Comparison Tool -->
+        <section id="comparison-section" class="comparison-section hidden">
+            <h2>Recording Comparison</h2>
+            <div class="comparison-container">
+                <div class="comparison-slots">
+                    <div class="comparison-slot" id="slot-1">
+                        <h3>Select Recording 1</h3>
+                        <div class="slot-content">
+                            <!-- Recording details -->
+                        </div>
+                    </div>
+                    <div class="comparison-slot" id="slot-2">
+                        <h3>Select Recording 2</h3>
+                        <div class="slot-content">
+                            <!-- Recording details -->
+                        </div>
+                    </div>
+                    <div class="comparison-slot" id="slot-3">
+                        <h3>Select Recording 3</h3>
+                        <div class="slot-content">
+                            <!-- Recording details -->
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-results">
+                    <!-- Comparison table -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>Streaming links provided for educational reference. Subscription may be required.</p>
+            <p>© 2024 Early Composers Musical Catalogue</p>
+        </div>
+    </footer>
+
+    <!-- Recording Detail Modal -->
+    <div id="recording-modal" class="modal hidden">
+        <div class="modal-content large">
+            <span class="modal-close" onclick="closeRecordingModal()">&times;</span>
+            <div id="modal-recording-details">
+                <!-- Details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/recordings.js"></script>
+</body>
+</html>

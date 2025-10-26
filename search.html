@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search - Early Composers Catalogue</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> /
+            <span>Advanced Search</span>
+        </nav>
+
+        <div class="header-content">
+            <h1>Advanced Search</h1>
+            <p class="subtitle">Search across all composers, works, and recordings</p>
+        </div>
+    </header>
+
+    <main class="search-content">
+        <!-- Quick Search -->
+        <section class="quick-search-section">
+            <div class="search-box-large">
+                <input type="text"
+                       id="global-search"
+                       placeholder="Search for composers, works, catalog numbers, or keywords..."
+                       autocomplete="off">
+                <button class="btn-search" onclick="performGlobalSearch()">
+                    🔍 Search
+                </button>
+            </div>
+            <div class="search-suggestions-dropdown" id="suggestions-dropdown"></div>
+        </section>
+
+        <!-- Advanced Filters -->
+        <section class="advanced-filters">
+            <h2>Advanced Search Filters</h2>
+
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-tab="works" onclick="switchTab('works')">
+                    Works
+                </button>
+                <button class="tab-btn" data-tab="composers" onclick="switchTab('composers')">
+                    Composers
+                </button>
+                <button class="tab-btn" data-tab="recordings" onclick="switchTab('recordings')">
+                    Recordings
+                </button>
+                <button class="tab-btn" data-tab="manuscripts" onclick="switchTab('manuscripts')">
+                    Manuscripts
+                </button>
+            </div>
+
+            <!-- Works Tab -->
+            <div id="works-tab" class="tab-content active">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Composer</label>
+                        <select id="works-composer">
+                            <option value="">All Composers</option>
+                            <option value="Bach">J.S. Bach</option>
+                            <option value="Mozart">W.A. Mozart</option>
+                            <option value="Handel">G.F. Handel</option>
+                            <option value="Vivaldi">A. Vivaldi</option>
+                            <option value="Haydn">J. Haydn</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Genre</label>
+                        <select id="works-genre">
+                            <option value="">All Genres</option>
+                            <option value="cantatas">Cantata</option>
+                            <option value="concerto">Concerto</option>
+                            <option value="symphony">Symphony</option>
+                            <option value="sonata">Sonata</option>
+                            <option value="opera">Opera</option>
+                            <option value="chamber">Chamber Music</option>
+                            <option value="keyboard">Keyboard</option>
+                            <option value="organ">Organ</option>
+                            <option value="vocal">Vocal</option>
+                            <option value="choral">Choral</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Key Signature</label>
+                        <select id="works-key">
+                            <option value="">Any Key</option>
+                            <option value="C major">C major</option>
+                            <option value="D major">D major</option>
+                            <option value="E major">E major</option>
+                            <option value="F major">F major</option>
+                            <option value="G major">G major</option>
+                            <option value="A major">A major</option>
+                            <option value="B major">B major</option>
+                            <option value="C minor">C minor</option>
+                            <option value="D minor">D minor</option>
+                            <option value="E minor">E minor</option>
+                            <option value="F minor">F minor</option>
+                            <option value="G minor">G minor</option>
+                            <option value="A minor">A minor</option>
+                            <option value="B minor">B minor</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Year Composed</label>
+                        <div class="year-range">
+                            <input type="number" id="year-from" placeholder="From" min="1600" max="1900">
+                            <span>to</span>
+                            <input type="number" id="year-to" placeholder="To" min="1600" max="1900">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Instrumentation</label>
+                        <input type="text" id="works-instrumentation" placeholder="e.g., violin, orchestra">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Duration (minutes)</label>
+                        <div class="duration-range">
+                            <input type="number" id="duration-min" placeholder="Min" min="0">
+                            <span>to</span>
+                            <input type="number" id="duration-max" placeholder="Max" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-search-advanced" onclick="searchWorks()">
+                    Search Works
+                </button>
+            </div>
+
+            <!-- Composers Tab -->
+            <div id="composers-tab" class="tab-content">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Period</label>
+                        <select id="composer-period">
+                            <option value="">All Periods</option>
+                            <option value="Renaissance">Renaissance</option>
+                            <option value="Baroque">Baroque</option>
+                            <option value="Classical">Classical</option>
+                            <option value="Early Romantic">Early Romantic</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Nationality</label>
+                        <select id="composer-nationality">
+                            <option value="">All Nationalities</option>
+                            <option value="German">German</option>
+                            <option value="Austrian">Austrian</option>
+                            <option value="Italian">Italian</option>
+                            <option value="French">French</option>
+                            <option value="English">English</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Birth Year Range</label>
+                        <div class="year-range">
+                            <input type="number" id="birth-from" placeholder="From" min="1500" max="1900">
+                            <span>to</span>
+                            <input type="number" id="birth-to" placeholder="To" min="1500" max="1900">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-search-advanced" onclick="searchComposers()">
+                    Search Composers
+                </button>
+            </div>
+
+            <!-- Recordings Tab -->
+            <div id="recordings-tab" class="tab-content">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Performer/Conductor</label>
+                        <input type="text" id="recording-performer" placeholder="Search performers...">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Label</label>
+                        <input type="text" id="recording-label" placeholder="e.g., Deutsche Grammophon">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Recording Year</label>
+                        <div class="year-range">
+                            <input type="number" id="rec-year-from" placeholder="From" min="1900" max="2024">
+                            <span>to</span>
+                            <input type="number" id="rec-year-to" placeholder="To" min="1900" max="2024">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Streaming Platform</label>
+                        <select id="recording-platform">
+                            <option value="">Any Platform</option>
+                            <option value="Spotify">Spotify</option>
+                            <option value="Apple Music">Apple Music</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="Tidal">Tidal</option>
+                            <option value="Amazon Music">Amazon Music</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Historical Recordings</label>
+                        <input type="checkbox" id="historical-only">
+                        <label for="historical-only">Pre-1980 only</label>
+                    </div>
+                </div>
+
+                <button class="btn-search-advanced" onclick="searchRecordings()">
+                    Search Recordings
+                </button>
+            </div>
+
+            <!-- Manuscripts Tab -->
+            <div id="manuscripts-tab" class="tab-content">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label>Manuscript Type</label>
+                        <select id="manuscript-type">
+                            <option value="">All Types</option>
+                            <option value="Autograph">Autograph</option>
+                            <option value="Copy">Contemporary Copy</option>
+                            <option value="First Edition">First Edition</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Location/Institution</label>
+                        <input type="text" id="manuscript-location" placeholder="e.g., Berlin State Library">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Digitized Only</label>
+                        <input type="checkbox" id="digitized-only">
+                        <label for="digitized-only">Show only digitized manuscripts</label>
+                    </div>
+                </div>
+
+                <button class="btn-search-advanced" onclick="searchManuscripts()">
+                    Search Manuscripts
+                </button>
+            </div>
+        </section>
+
+        <!-- Search Results -->
+        <section class="search-results" id="search-results">
+            <div class="results-header">
+                <h2>Search Results</h2>
+                <span class="results-count" id="results-count">0 results</span>
+            </div>
+
+            <div class="results-container" id="results-container">
+                <div class="no-results">
+                    <p>Enter search criteria above to find works, composers, recordings, or manuscripts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Saved Searches -->
+        <section class="saved-searches">
+            <h3>Recent Searches</h3>
+            <div id="recent-searches" class="searches-list">
+                <!-- Recent searches will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/search.js"></script>
+</body>
+</html>

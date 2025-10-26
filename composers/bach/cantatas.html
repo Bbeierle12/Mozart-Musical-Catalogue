@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bach Cantatas - BWV 1-224</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/composer.css">
+</head>
+<body data-composer="bach">
+    <header class="composer-header">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a> /
+            <a href="index.html">Bach</a> /
+            <span>Cantatas</span>
+        </nav>
+
+        <div class="category-hero">
+            <h1>Bach Cantatas</h1>
+            <p class="category-subtitle">BWV 1-224 • Sacred and Secular Cantatas</p>
+        </div>
+    </header>
+
+    <main class="composer-content">
+        <section class="content-section">
+            <h2>Overview</h2>
+            <p>Johann Sebastian Bach composed over 200 cantatas, both sacred and secular. These works represent some of his most profound musical expressions, written primarily for the Lutheran church services in Leipzig.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Total Cantatas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Complete Cycles</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1723-1750</span>
+                    <span class="stat-label">Leipzig Period</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Sacred Cantatas (BWV 1-200)</h2>
+
+            <div class="works-filter">
+                <div class="filter-group">
+                    <label for="liturgical-filter">Liturgical Occasion:</label>
+                    <select id="liturgical-filter">
+                        <option value="">All Occasions</option>
+                        <option value="advent">Advent</option>
+                        <option value="christmas">Christmas</option>
+                        <option value="epiphany">Epiphany</option>
+                        <option value="lent">Lent</option>
+                        <option value="easter">Easter</option>
+                        <option value="trinity">Trinity</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter">Year:</label>
+                    <select id="year-filter">
+                        <option value="">All Years</option>
+                        <option value="1707-1710">Mühlhausen (1707-1710)</option>
+                        <option value="1714-1716">Weimar (1714-1716)</option>
+                        <option value="1723-1724">Leipzig Cycle I</option>
+                        <option value="1724-1725">Leipzig Cycle II</option>
+                        <option value="1725-1727">Leipzig Cycle III</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cantata-grid" id="sacred-cantatas">
+                <!-- Cantatas will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Secular Cantatas (BWV 201-224)</h2>
+            <p>Bach's secular cantatas were composed for various occasions including weddings, birthdays, and civic celebrations.</p>
+
+            <div class="cantata-grid" id="secular-cantatas">
+                <!-- Secular cantatas will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Notable Cantatas</h2>
+            <div class="works-grid">
+                <div class="work-card highlight">
+                    <h3>BWV 4: Christ lag in Todes Banden</h3>
+                    <p>Easter • 1707</p>
+                    <p>One of Bach's earliest cantatas, showing remarkable mastery</p>
+                </div>
+                <div class="work-card highlight">
+                    <h3>BWV 140: Wachet auf, ruft uns die Stimme</h3>
+                    <p>27th Sunday after Trinity • 1731</p>
+                    <p>Features the famous chorale melody</p>
+                </div>
+                <div class="work-card highlight">
+                    <h3>BWV 147: Herz und Mund und Tat und Leben</h3>
+                    <p>Visitation • 1723</p>
+                    <p>Contains "Jesu, Joy of Man's Desiring"</p>
+                </div>
+                <div class="work-card highlight">
+                    <h3>BWV 80: Ein feste Burg ist unser Gott</h3>
+                    <p>Reformation Day • 1724</p>
+                    <p>Based on Luther's famous hymn</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="composer-footer">
+        <div class="footer-nav">
+            <a href="index.html">Back to Bach Overview</a> |
+            <a href="keyboard.html">Keyboard Works</a> |
+            <a href="orchestral.html">Orchestral Works</a>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/composer-common.js"></script>
+    <script>
+        // Load cantata data
+        async function loadCantatas() {
+            try {
+                const response = await fetch('../../database/data/bach-bwv-catalogue.json');
+                const data = await response.json();
+
+                const sacredCantatas = data.works.filter(w =>
+                    w.category === 'cantatas' && parseInt(w.bwv.replace('BWV ', '')) <= 200
+                );
+
+                const secularCantatas = data.works.filter(w =>
+                    w.category === 'cantatas' && parseInt(w.bwv.replace('BWV ', '')) > 200
+                );
+
+                displayCantatas('sacred-cantatas', sacredCantatas);
+                displayCantatas('secular-cantatas', secularCantatas);
+            } catch (error) {
+                console.error('Error loading cantatas:', error);
+            }
+        }
+
+        function displayCantatas(elementId, cantatas) {
+            const container = document.getElementById(elementId);
+            if (!container) return;
+
+            container.innerHTML = cantatas.map(cantata => `
+                <div class="cantata-card">
+                    <h4>${cantata.bwv}: ${cantata.title}</h4>
+                    <p class="cantata-year">${cantata.yearComposed || 'Date unknown'}</p>
+                    <p class="cantata-desc">${cantata.description || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', loadCantatas);
+    </script>
+</body>
+</html>

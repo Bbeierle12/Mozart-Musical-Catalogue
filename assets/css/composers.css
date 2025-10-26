@@ -1,0 +1,395 @@
+/* =====================================================
+   Composers Grid and Cards - Additional Styles
+   ===================================================== */
+
+/* Search Suggestions Dropdown */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: var(--border-medium);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    display: none;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: var(--border-light);
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: var(--bg-light);
+}
+
+.suggestion-icon {
+    font-size: 1.2rem;
+    margin-right: var(--spacing-md);
+}
+
+.suggestion-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-primary {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.suggestion-secondary {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+/* Modal Overlay for Composer Preview */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: var(--spacing-xl);
+}
+
+.composer-preview {
+    color: var(--text-primary);
+}
+
+.composer-years {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.composer-bio {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.composer-stats {
+    background: var(--bg-light);
+    padding: var(--spacing-md);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.famous-works {
+    margin-top: var(--spacing-lg);
+}
+
+.famous-works strong {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.famous-works ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.famous-works li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    border-bottom: var(--border-light);
+}
+
+.famous-works li:last-child {
+    border-bottom: none;
+}
+
+.famous-works li:before {
+    content: "♪";
+    position: absolute;
+    left: 0;
+    color: var(--info-color);
+}
+
+.modal-actions {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--info-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    max-width: 300px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-info {
+    background: var(--info-color);
+}
+
+.notification-success {
+    background: var(--success-color);
+}
+
+.notification-warning {
+    background: var(--warning-color);
+}
+
+.notification-error {
+    background: var(--accent-color);
+}
+
+/* Loading States */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Composer-specific color themes */
+.composer-bach {
+    --composer-primary: #1e3a8a;
+    --composer-secondary: #3b82f6;
+}
+
+.composer-mozart {
+    --composer-primary: #7c2d12;
+    --composer-secondary: #dc2626;
+}
+
+.composer-handel {
+    --composer-primary: #14532d;
+    --composer-secondary: #16a34a;
+}
+
+.composer-vivaldi {
+    --composer-primary: #7c2d12;
+    --composer-secondary: #ea580c;
+}
+
+.composer-haydn {
+    --composer-primary: #4c1d95;
+    --composer-secondary: #8b5cf6;
+}
+
+/* Apply composer-specific colors when data attribute is present */
+[data-composer="bach"] .composer-header {
+    background: linear-gradient(135deg, var(--composer-primary), var(--composer-secondary));
+}
+
+[data-composer="mozart"] .composer-header {
+    background: linear-gradient(135deg, #7c2d12, #dc2626);
+}
+
+[data-composer="handel"] .composer-header {
+    background: linear-gradient(135deg, #14532d, #16a34a);
+}
+
+[data-composer="vivaldi"] .composer-header {
+    background: linear-gradient(135deg, #7c2d12, #ea580c);
+}
+
+[data-composer="haydn"] .composer-header {
+    background: linear-gradient(135deg, #4c1d95, #8b5cf6);
+}
+
+/* Status Indicators */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-complete {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-progress {
+    background: var(--warning-color);
+    color: white;
+}
+
+.status-planned {
+    background: var(--text-light);
+    color: white;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus Styles */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--info-color);
+    outline-offset: 2px;
+}
+
+/* Skip to Content Link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}

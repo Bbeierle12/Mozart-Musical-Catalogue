@@ -1,0 +1,557 @@
+{
+  "recordings": [
+    {
+      "id": "rec_001",
+      "workId": "BWV 232",
+      "composer": "Bach",
+      "workTitle": "Mass in B minor",
+      "performers": {
+        "conductor": "John Eliot Gardiner",
+        "ensemble": "Monteverdi Choir & English Baroque Soloists",
+        "soloists": ["Nancy Argenta", "Mary Nichols", "Ashley Stafford", "Michael Chance", "Wynford Evans", "Howard Milner"]
+      },
+      "recordingInfo": {
+        "year": 1985,
+        "venue": "St. John's Smith Square, London",
+        "label": "Archiv Produktion",
+        "catalogNumber": "415 514-2",
+        "format": ["CD", "Digital"],
+        "duration": 108,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "DDD",
+        "bitrate": "16-bit/44.1kHz",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:4FGjZjBRfT7aKyL5QzYM1N",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "Apple Music",
+          "url": "https://music.apple.com/album/id1443145282",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "YouTube",
+          "url": "https://www.youtube.com/playlist?list=PLxHbdI9",
+          "availability": "worldwide",
+          "subscription": false
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.8,
+        "reviews": [
+          {
+            "source": "Gramophone",
+            "rating": "Editor's Choice",
+            "excerpt": "Gardiner's approach brings exceptional clarity and energy"
+          },
+          {
+            "source": "BBC Music Magazine",
+            "rating": "5 stars",
+            "excerpt": "A landmark recording of Bach's masterpiece"
+          }
+        ]
+      },
+      "historicalSignificance": "First complete recording using period instruments to gain widespread acclaim"
+    },
+    {
+      "id": "rec_002",
+      "workId": "BWV 988",
+      "composer": "Bach",
+      "workTitle": "Goldberg Variations",
+      "performers": {
+        "soloist": "Glenn Gould",
+        "instrument": "Piano"
+      },
+      "recordingInfo": {
+        "year": 1955,
+        "venue": "Columbia 30th Street Studio, New York",
+        "label": "Columbia Masterworks",
+        "catalogNumber": "ML 5060",
+        "format": ["LP", "CD", "Digital"],
+        "duration": 38,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "Mono",
+        "remastered": true,
+        "remasterYear": 1992
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:6GI52BW1wPA63YzmQXv11P",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "Apple Music",
+          "url": "https://music.apple.com/album/id1452359124",
+          "availability": "worldwide",
+          "subscription": true
+        }
+      ],
+      "criticalReception": {
+        "rating": 5.0,
+        "reviews": [
+          {
+            "source": "The New York Times",
+            "rating": "Historic",
+            "excerpt": "The recording that launched Glenn Gould's career and changed how we hear Bach"
+          }
+        ]
+      },
+      "historicalSignificance": "Gould's debut recording; revolutionized Bach performance on piano"
+    },
+    {
+      "id": "rec_003",
+      "workId": "BWV 988",
+      "composer": "Bach",
+      "workTitle": "Goldberg Variations",
+      "performers": {
+        "soloist": "Glenn Gould",
+        "instrument": "Piano"
+      },
+      "recordingInfo": {
+        "year": 1981,
+        "venue": "CBS Studios, New York",
+        "label": "CBS Masterworks",
+        "catalogNumber": "IM 37779",
+        "format": ["CD", "Digital"],
+        "duration": 51,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "DDD",
+        "bitrate": "16-bit/44.1kHz",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:0wj6pELIbkYj0PfHHqJ6HX",
+          "availability": "worldwide",
+          "subscription": true
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.9,
+        "reviews": [
+          {
+            "source": "Gramophone",
+            "rating": "Essential Recording",
+            "excerpt": "A more contemplative, mature interpretation from Gould"
+          }
+        ]
+      },
+      "historicalSignificance": "Gould's final studio recording before his death in 1982"
+    },
+    {
+      "id": "rec_004",
+      "workId": "BWV 1007-1012",
+      "composer": "Bach",
+      "workTitle": "Six Cello Suites",
+      "performers": {
+        "soloist": "Pablo Casals",
+        "instrument": "Cello"
+      },
+      "recordingInfo": {
+        "year": 1936,
+        "venue": "Abbey Road Studios, London",
+        "label": "HMV",
+        "catalogNumber": "DB 8211-8232",
+        "format": ["78rpm", "LP", "CD", "Digital"],
+        "duration": 133,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "Mono",
+        "remastered": true,
+        "remasterYear": 2000
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:7qKuSqpCptCVmmNRnCplHT",
+          "availability": "worldwide",
+          "subscription": true
+        }
+      ],
+      "criticalReception": {
+        "rating": 5.0,
+        "reviews": [
+          {
+            "source": "Classical Music Magazine",
+            "rating": "Legendary",
+            "excerpt": "The recording that brought Bach's Cello Suites to public attention"
+          }
+        ]
+      },
+      "historicalSignificance": "First complete recording of the Cello Suites; established them in the repertoire"
+    },
+    {
+      "id": "rec_005",
+      "workId": "BWV 1007-1012",
+      "composer": "Bach",
+      "workTitle": "Six Cello Suites",
+      "performers": {
+        "soloist": "Yo-Yo Ma",
+        "instrument": "Cello"
+      },
+      "recordingInfo": {
+        "year": 2018,
+        "venue": "Various locations worldwide",
+        "label": "Sony Classical",
+        "catalogNumber": "19075868502",
+        "format": ["CD", "Digital", "Vinyl"],
+        "duration": 153,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "24-bit/96kHz",
+        "bitrate": "Hi-Res",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:69hoseqerfNZUODbKcsxKF",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "Tidal",
+          "url": "https://tidal.com/album/95569820",
+          "availability": "worldwide",
+          "subscription": true,
+          "quality": "Master"
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.7,
+        "reviews": [
+          {
+            "source": "The Strad",
+            "rating": "Outstanding",
+            "excerpt": "Ma's third and most personal recording of these works"
+          }
+        ]
+      },
+      "historicalSignificance": "Part of Ma's Bach Project, performing all six suites in 36 locations worldwide"
+    },
+    {
+      "id": "rec_006",
+      "workId": "BWV 1046-1051",
+      "composer": "Bach",
+      "workTitle": "Brandenburg Concertos",
+      "performers": {
+        "conductor": "Trevor Pinnock",
+        "ensemble": "The English Concert"
+      },
+      "recordingInfo": {
+        "year": 1982,
+        "venue": "Henry Wood Hall, London",
+        "label": "Archiv Produktion",
+        "catalogNumber": "423 492-2",
+        "format": ["CD", "Digital"],
+        "duration": 103,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "DDD",
+        "bitrate": "16-bit/44.1kHz",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:5TxY9EXDSrM5z1rQTN1lTe",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "Apple Music",
+          "url": "https://music.apple.com/album/id1452368940",
+          "availability": "worldwide",
+          "subscription": true
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.9,
+        "reviews": [
+          {
+            "source": "Gramophone",
+            "rating": "Award Winner",
+            "excerpt": "Set the standard for period instrument performances"
+          }
+        ]
+      },
+      "historicalSignificance": "Influential period instrument recording that helped establish historically informed performance practice"
+    },
+    {
+      "id": "rec_007",
+      "workId": "BWV 244",
+      "composer": "Bach",
+      "workTitle": "St. Matthew Passion",
+      "performers": {
+        "conductor": "Otto Klemperer",
+        "ensemble": "Philharmonia Orchestra & Choir",
+        "soloists": ["Peter Pears", "Dietrich Fischer-Dieskau", "Elisabeth Schwarzkopf", "Christa Ludwig"]
+      },
+      "recordingInfo": {
+        "year": 1961,
+        "venue": "Kingsway Hall, London",
+        "label": "EMI",
+        "catalogNumber": "CMS 7 63058 2",
+        "format": ["LP", "CD", "Digital"],
+        "duration": 200,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "ADD",
+        "remastered": true,
+        "remasterYear": 1989
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:6sLLlqYJPxXxdFGLdNBRhY",
+          "availability": "worldwide",
+          "subscription": true
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.8,
+        "reviews": [
+          {
+            "source": "BBC Music Magazine",
+            "rating": "Classic Recording",
+            "excerpt": "Klemperer's monumental and deeply spiritual interpretation"
+          }
+        ]
+      },
+      "historicalSignificance": "One of the great traditional performances with legendary cast"
+    },
+    {
+      "id": "rec_008",
+      "workId": "BWV 846-869",
+      "composer": "Bach",
+      "workTitle": "The Well-Tempered Clavier, Book I",
+      "performers": {
+        "soloist": "Angela Hewitt",
+        "instrument": "Piano"
+      },
+      "recordingInfo": {
+        "year": 1998,
+        "venue": "Beethovensaal, Hannover",
+        "label": "Hyperion",
+        "catalogNumber": "CDA67301/2",
+        "format": ["CD", "Digital"],
+        "duration": 114,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "DDD",
+        "bitrate": "16-bit/44.1kHz",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:3GJDlDGNRJTqP9THvgUoTY",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "Qobuz",
+          "url": "https://www.qobuz.com/album/bach-the-well-tempered-clavier-book-1/0034571173012",
+          "availability": "select countries",
+          "subscription": true,
+          "quality": "Hi-Res"
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.9,
+        "reviews": [
+          {
+            "source": "Gramophone",
+            "rating": "Editor's Choice",
+            "excerpt": "Hewitt brings crystalline clarity and profound musicality"
+          }
+        ]
+      },
+      "historicalSignificance": "Part of Hewitt's complete Bach keyboard works cycle"
+    },
+    {
+      "id": "rec_009",
+      "workId": "BWV 565",
+      "composer": "Bach",
+      "workTitle": "Toccata and Fugue in D minor",
+      "performers": {
+        "soloist": "Marie-Claire Alain",
+        "instrument": "Organ",
+        "venue": "St. Laurenskerk, Alkmaar"
+      },
+      "recordingInfo": {
+        "year": 1994,
+        "venue": "St. Laurenskerk, Alkmaar, Netherlands",
+        "label": "Erato",
+        "catalogNumber": "4509-96746-2",
+        "format": ["CD", "Digital"],
+        "duration": 9,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "DDD",
+        "bitrate": "16-bit/44.1kHz",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:2MQDkxV3hTzhQcZyMQ4Qpy",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "YouTube Music",
+          "url": "https://music.youtube.com/playlist?list=OLAK5uy",
+          "availability": "worldwide",
+          "subscription": false
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.7,
+        "reviews": [
+          {
+            "source": "Fanfare Magazine",
+            "rating": "Excellent",
+            "excerpt": "Alain's third complete cycle shows masterful control and registration"
+          }
+        ]
+      },
+      "historicalSignificance": "Part of Alain's third complete Bach organ works recording"
+    },
+    {
+      "id": "rec_010",
+      "workId": "BWV 1001-1006",
+      "composer": "Bach",
+      "workTitle": "Sonatas and Partitas for Solo Violin",
+      "performers": {
+        "soloist": "Hilary Hahn",
+        "instrument": "Violin"
+      },
+      "recordingInfo": {
+        "year": 2018,
+        "venue": "Various locations",
+        "label": "Decca",
+        "catalogNumber": "479 2729",
+        "format": ["CD", "Digital", "Vinyl"],
+        "duration": 133,
+        "recordingType": "Studio"
+      },
+      "audioQuality": {
+        "format": "24-bit/96kHz",
+        "bitrate": "Hi-Res",
+        "remastered": false
+      },
+      "streamingLinks": [
+        {
+          "platform": "Spotify",
+          "url": "spotify:album:1tjZUvdpKDCRLUk5KQpQq7",
+          "availability": "worldwide",
+          "subscription": true
+        },
+        {
+          "platform": "Amazon Music HD",
+          "url": "https://music.amazon.com/albums/B07HGLPWFV",
+          "availability": "worldwide",
+          "subscription": true,
+          "quality": "Ultra HD"
+        }
+      ],
+      "criticalReception": {
+        "rating": 4.8,
+        "reviews": [
+          {
+            "source": "The Guardian",
+            "rating": "5 stars",
+            "excerpt": "Hahn's technical mastery serves a profound musical vision"
+          }
+        ]
+      },
+      "historicalSignificance": "Modern benchmark recording with exceptional technical and interpretative qualities"
+    }
+  ],
+  "platforms": {
+    "Spotify": {
+      "apiEndpoint": "https://api.spotify.com/v1/",
+      "requiresAuth": true,
+      "subscriptionTypes": ["Free with ads", "Premium"],
+      "audioQuality": "320kbps OGG Vorbis",
+      "availability": "160+ countries"
+    },
+    "Apple Music": {
+      "apiEndpoint": "https://api.music.apple.com/v1/",
+      "requiresAuth": true,
+      "subscriptionTypes": ["Individual", "Family", "Student"],
+      "audioQuality": "256kbps AAC, Lossless, Hi-Res Lossless",
+      "availability": "167 countries"
+    },
+    "YouTube": {
+      "apiEndpoint": "https://www.googleapis.com/youtube/v3/",
+      "requiresAuth": false,
+      "subscriptionTypes": ["Free with ads", "YouTube Premium"],
+      "audioQuality": "128-256kbps AAC",
+      "availability": "Worldwide"
+    },
+    "Tidal": {
+      "apiEndpoint": "https://api.tidal.com/v1/",
+      "requiresAuth": true,
+      "subscriptionTypes": ["HiFi", "HiFi Plus"],
+      "audioQuality": "FLAC 16-bit/44.1kHz, MQA up to 24-bit/192kHz",
+      "availability": "61 countries"
+    },
+    "Qobuz": {
+      "apiEndpoint": "https://www.qobuz.com/api.json/",
+      "requiresAuth": true,
+      "subscriptionTypes": ["Studio Premier", "Studio Sublime"],
+      "audioQuality": "Up to 24-bit/192kHz",
+      "availability": "Select countries"
+    },
+    "Amazon Music": {
+      "apiEndpoint": "https://music.amazon.com/api/",
+      "requiresAuth": true,
+      "subscriptionTypes": ["Prime Music", "Music Unlimited", "HD"],
+      "audioQuality": "Up to 24-bit/192kHz (Ultra HD)",
+      "availability": "50+ countries"
+    }
+  },
+  "labels": {
+    "Archiv Produktion": {
+      "parent": "Deutsche Grammophon",
+      "specialization": "Early music and historically informed performance",
+      "founded": 1947
+    },
+    "Hyperion": {
+      "specialization": "Classical music, particularly British composers",
+      "founded": 1980
+    },
+    "Harmonia Mundi": {
+      "specialization": "Early and Baroque music",
+      "founded": 1958
+    },
+    "ECM New Series": {
+      "parent": "ECM Records",
+      "specialization": "Contemporary classical and early music",
+      "founded": 1984
+    }
+  }
+}
