@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Timeline - Early Composers</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> /
+            <span>Interactive Timeline</span>
+        </nav>
+
+        <div class="header-content">
+            <h1>Musical Timeline</h1>
+            <p class="subtitle">Explore the lives and works of Early Composers (1650-1850)</p>
+        </div>
+    </header>
+
+    <main class="timeline-main">
+        <!-- Timeline Controls -->
+        <section class="timeline-controls">
+            <div class="controls-container">
+                <div class="filter-group">
+                    <label>View Mode:</label>
+                    <select id="view-mode" onchange="changeViewMode(this.value)">
+                        <option value="lifespans">Composer Lifespans</option>
+                        <option value="works">Major Works</option>
+                        <option value="events">Historical Events</option>
+                        <option value="all">All Combined</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Period:</label>
+                    <select id="period-filter" onchange="filterByPeriod(this.value)">
+                        <option value="all">All Periods</option>
+                        <option value="baroque">Baroque (1600-1750)</option>
+                        <option value="classical">Classical (1750-1820)</option>
+                        <option value="romantic">Early Romantic (1820-1850)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Zoom:</label>
+                    <div class="zoom-controls">
+                        <button onclick="zoomOut()">−</button>
+                        <span id="zoom-level">100%</span>
+                        <button onclick="zoomIn()">+</button>
+                    </div>
+                </div>
+
+                <button class="btn-reset" onclick="resetTimeline()">Reset View</button>
+            </div>
+        </section>
+
+        <!-- Timeline Visualization -->
+        <section class="timeline-visualization">
+            <div class="timeline-container" id="timeline-container">
+                <!-- Century markers -->
+                <div class="century-markers">
+                    <div class="marker" data-year="1600">1600</div>
+                    <div class="marker" data-year="1650">1650</div>
+                    <div class="marker" data-year="1700">1700</div>
+                    <div class="marker" data-year="1750">1750</div>
+                    <div class="marker" data-year="1800">1800</div>
+                    <div class="marker" data-year="1850">1850</div>
+                </div>
+
+                <!-- Timeline track -->
+                <div class="timeline-track" id="timeline-track">
+                    <!-- Composer lifespans will be rendered here -->
+                </div>
+
+                <!-- Historical events track -->
+                <div class="events-track" id="events-track">
+                    <!-- Historical events will be rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Legend -->
+        <section class="timeline-legend">
+            <h3>Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <span class="legend-color baroque"></span>
+                    <span>Baroque Period</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color classical"></span>
+                    <span>Classical Period</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color romantic"></span>
+                    <span>Early Romantic Period</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-marker work"></span>
+                    <span>Major Work</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-marker event"></span>
+                    <span>Historical Event</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Composer Details Panel -->
+        <section class="details-panel" id="details-panel">
+            <button class="close-panel" onclick="closeDetailsPanel()">×</button>
+            <div id="details-content">
+                <!-- Details loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Information Cards -->
+        <section class="info-cards">
+            <div class="info-card" data-composer="monteverdi">
+                <h3>Claudio Monteverdi</h3>
+                <p class="composer-years">1567 - 1643</p>
+                <p class="composer-period">Renaissance → Baroque Transition</p>
+                <p class="composer-contribution">Pioneered opera and developed the seconda pratica</p>
+                <button onclick="showComposerOnTimeline('monteverdi')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="purcell">
+                <h3>Henry Purcell</h3>
+                <p class="composer-years">1659 - 1695</p>
+                <p class="composer-period">Baroque</p>
+                <p class="composer-contribution">Leading English Baroque composer</p>
+                <button onclick="showComposerOnTimeline('purcell')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="vivaldi">
+                <h3>Antonio Vivaldi</h3>
+                <p class="composer-years">1678 - 1741</p>
+                <p class="composer-period">Baroque</p>
+                <p class="composer-contribution">Virtuoso violinist, created The Four Seasons</p>
+                <button onclick="showComposerOnTimeline('vivaldi')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="bach">
+                <h3>Johann Sebastian Bach</h3>
+                <p class="composer-years">1685 - 1750</p>
+                <p class="composer-period">Baroque</p>
+                <p class="composer-contribution">Master of counterpoint and sacred music</p>
+                <button onclick="showComposerOnTimeline('bach')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="handel">
+                <h3>George Frideric Handel</h3>
+                <p class="composer-years">1685 - 1759</p>
+                <p class="composer-period">Baroque</p>
+                <p class="composer-contribution">Oratorio master, composed Messiah</p>
+                <button onclick="showComposerOnTimeline('handel')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="haydn">
+                <h3>Joseph Haydn</h3>
+                <p class="composer-years">1732 - 1809</p>
+                <p class="composer-period">Classical</p>
+                <p class="composer-contribution">Father of the Symphony and String Quartet</p>
+                <button onclick="showComposerOnTimeline('haydn')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="mozart">
+                <h3>Wolfgang Amadeus Mozart</h3>
+                <p class="composer-years">1756 - 1791</p>
+                <p class="composer-period">Classical</p>
+                <p class="composer-contribution">Prodigy who mastered every musical form</p>
+                <button onclick="showComposerOnTimeline('mozart')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="beethoven">
+                <h3>Ludwig van Beethoven</h3>
+                <p class="composer-years">1770 - 1827</p>
+                <p class="composer-period">Classical → Romantic Transition</p>
+                <p class="composer-contribution">Bridged Classical and Romantic eras</p>
+                <button onclick="showComposerOnTimeline('beethoven')">View on Timeline</button>
+            </div>
+
+            <div class="info-card" data-composer="schubert">
+                <h3>Franz Schubert</h3>
+                <p class="composer-years">1797 - 1828</p>
+                <p class="composer-period">Early Romantic</p>
+                <p class="composer-contribution">Master of the German Lied</p>
+                <button onclick="showComposerOnTimeline('schubert')">View on Timeline</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/timeline.js"></script>
+</body>
+</html>
