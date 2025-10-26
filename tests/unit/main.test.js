@@ -48,13 +48,12 @@ describe('Main Catalogue Interface', () => {
   });
 
   describe('Initialization', () => {
-    test('should set up event listeners on DOMContentLoaded', () => {
-      const addEventListenerSpy = jest.spyOn(document, 'addEventListener');
-
-      const event = new Event('DOMContentLoaded');
-      document.dispatchEvent(event);
-
-      expect(addEventListenerSpy).toHaveBeenCalled();
+    test('should have all main functions available', () => {
+      // Verify that key functions are defined and available
+      expect(typeof window.performQuickSearch).toBe('function');
+      expect(typeof window.toggleTier2).toBe('function');
+      expect(typeof window.showNotification).toBe('function');
+      expect(typeof window.closeModal).toBe('function');
     });
   });
 

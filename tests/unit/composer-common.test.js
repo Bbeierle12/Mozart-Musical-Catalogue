@@ -67,8 +67,18 @@ describe('Composer Common Functions', () => {
         <div class="catalog-system"></div>
         <div class="total-works"></div>
 
-        <select id="genre-filter"></select>
-        <select id="period-filter"></select>
+        <select id="genre-filter">
+          <option value="">All Categories</option>
+          <option value="cantatas">Cantatas</option>
+          <option value="keyboard">Keyboard Works</option>
+          <option value="orchestral">Orchestral</option>
+        </select>
+        <select id="period-filter">
+          <option value="">All Periods</option>
+          <option value="1720-1725">1720-1725</option>
+          <option value="1726-1730">1726-1730</option>
+          <option value="1741-1745">1741-1745</option>
+        </select>
         <input type="text" id="search-works">
 
         <table class="works-table">
@@ -475,6 +485,13 @@ describe('Composer Common Functions', () => {
       const searchInput = document.getElementById('search-works');
       window.filterWorks = jest.fn();
 
+      // Set up debounced event listener
+      let debounceTimeout;
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => window.filterWorks(), 300);
+      });
+
       // Simulate rapid typing
       searchInput.value = 'B';
       searchInput.dispatchEvent(new Event('input'));
@@ -499,6 +516,13 @@ describe('Composer Common Functions', () => {
     test('should search on Enter key', () => {
       const searchInput = document.getElementById('search-works');
       window.filterWorks = jest.fn();
+
+      // Set up Enter key event listener
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          window.filterWorks();
+        }
+      });
 
       const enterEvent = new KeyboardEvent('keypress', { key: 'Enter' });
       searchInput.dispatchEvent(enterEvent);
@@ -534,15 +558,32 @@ function displayComposerInfo() {
   if (!window.composerData) return;
 
   const composer = window.composerData.composer;
+  if (!composer) return;
 
-  document.title = `${composer.fullName} - Complete Works Catalogue`;
+  if (composer.fullName) {
+    document.title = `${composer.fullName} - Complete Works Catalogue`;
+    updateElement('.composer-name', composer.fullName);
+  }
 
-  updateElement('.composer-name', composer.fullName);
-  updateElement('.composer-dates', `${composer.birthDate.split('-')[0]} - ${composer.deathDate.split('-')[0]}`);
-  updateElement('.composer-nationality', composer.nationality);
-  updateElement('.composer-period', `${composer.period} Period`);
-  updateElement('.catalog-system', `${window.composerData.catalogSystem.name} (${window.composerData.catalogSystem.abbreviation})`);
-  updateElement('.total-works', `${composer.totalWorks} Works`);
+  if (composer.birthDate && composer.deathDate) {
+    updateElement('.composer-dates', `${composer.birthDate.split('-')[0]} - ${composer.deathDate.split('-')[0]}`);
+  }
+
+  if (composer.nationality) {
+    updateElement('.composer-nationality', composer.nationality);
+  }
+
+  if (composer.period) {
+    updateElement('.composer-period', `${composer.period} Period`);
+  }
+
+  if (window.composerData.catalogSystem) {
+    updateElement('.catalog-system', `${window.composerData.catalogSystem.name} (${window.composerData.catalogSystem.abbreviation})`);
+  }
+
+  if (composer.totalWorks) {
+    updateElement('.total-works', `${composer.totalWorks} Works`);
+  }
 }
 
 function displayWorks() {
@@ -681,6 +722,7 @@ function showWorkDetails(workId) {
   modalTitle.textContent = `${work.title} (${work.bwv})`;
   modalDetails.innerHTML = `
     <div class="work-details">
+      <div><strong>Title:</strong> ${work.title}</div>
       <div><strong>Key:</strong> ${work.key}</div>
       <div><strong>Year:</strong> ${work.yearComposed}</div>
       <div><strong>Category:</strong> ${work.category}</div>

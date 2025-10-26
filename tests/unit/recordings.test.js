@@ -107,11 +107,29 @@ describe('Recordings Database', () => {
     document.body.innerHTML = `
       <div id="recordings-container"></div>
 
-      <select id="composer-filter"></select>
+      <select id="composer-filter">
+        <option value="">All Composers</option>
+        <option value="Bach">Bach</option>
+        <option value="Mozart">Mozart</option>
+      </select>
       <input type="text" id="work-filter">
       <input type="text" id="performer-filter">
-      <select id="year-filter"></select>
-      <select id="platform-filter"></select>
+      <select id="year-filter">
+        <option value="">All Periods</option>
+        <option value="historical">Historical (pre-1980)</option>
+        <option value="1980s">1980s</option>
+        <option value="1990s">1990s</option>
+        <option value="2000s">2000s</option>
+        <option value="2010s">2010s</option>
+        <option value="2020s">2020s</option>
+      </select>
+      <select id="platform-filter">
+        <option value="">All Platforms</option>
+        <option value="Spotify">Spotify</option>
+        <option value="Apple Music">Apple Music</option>
+        <option value="YouTube">YouTube</option>
+        <option value="Tidal">Tidal</option>
+      </select>
 
       <div id="total-recordings">0</div>
       <div id="total-performers">0</div>
@@ -362,7 +380,7 @@ describe('Recordings Database', () => {
     test('should generate correct star rating', () => {
       expect(generateStars(5)).toBe('★★★★★');
       expect(generateStars(4)).toBe('★★★★☆');
-      expect(generateStars(3.5)).toBe('★★★☆☆☆☆');
+      expect(generateStars(3.5)).toBe('★★★☆☆');
       expect(generateStars(0)).toBe('☆☆☆☆☆');
     });
 
