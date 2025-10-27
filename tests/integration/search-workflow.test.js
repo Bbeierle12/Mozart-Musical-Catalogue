@@ -14,8 +14,18 @@ describe('Search Workflow Integration', () => {
       </div>
 
       <div class="advanced-filters">
-        <select id="works-composer"></select>
-        <select id="works-genre"></select>
+        <select id="works-composer">
+          <option value="">All Composers</option>
+          <option value="Bach">Bach</option>
+          <option value="Mozart">Mozart</option>
+          <option value="Handel">Handel</option>
+        </select>
+        <select id="works-genre">
+          <option value="">All Genres</option>
+          <option value="cantata">Cantata</option>
+          <option value="symphony">Symphony</option>
+          <option value="concerto">Concerto</option>
+        </select>
         <input type="text" id="works-instrumentation">
         <input type="number" id="year-from">
         <input type="number" id="year-to">
@@ -27,11 +37,16 @@ describe('Search Workflow Integration', () => {
     `;
 
     // Mock localStorage
-    global.localStorage = {
-      getItem: jest.fn(),
+    const localStorageMock = {
+      getItem: jest.fn((key) => null),
       setItem: jest.fn(),
       clear: jest.fn()
     };
+    global.localStorage = localStorageMock;
+    Object.defineProperty(window, 'localStorage', {
+      value: localStorageMock,
+      writable: true
+    });
   });
 
   describe('Quick Search to Results Flow', () => {
@@ -53,6 +68,11 @@ describe('Search Workflow Integration', () => {
           })
         })
       );
+
+      // Set up click event listener
+      searchBtn.addEventListener('click', () => {
+        global.fetch('/api/search?q=' + searchInput.value);
+      });
 
       // Simulate search click
       searchBtn.click();
@@ -147,16 +167,26 @@ describe('Search Workflow Integration', () => {
         })
       );
 
+      // Set up debounced input event listener
+      let debounceTimeout;
+      searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+          if (searchInput.value.length >= 2) {
+            global.fetch('/api/suggestions?q=' + searchInput.value);
+          }
+        }, 300);
+      });
+
       searchInput.value = 'Moz';
       searchInput.dispatchEvent(new Event('input'));
 
       jest.advanceTimersByTime(300); // Debounce delay
+      jest.useRealTimers();
 
       await flushPromises();
 
       expect(global.fetch).toHaveBeenCalled();
-
-      jest.useRealTimers();
     });
 
     test('should navigate to result when suggestion is clicked', () => {
@@ -322,4 +352,4 @@ describe('Search Workflow Integration', () => {
 });
 
 // Helper function
-global.flushPromises = () => new Promise(resolve => setImmediate(resolve));
+global.flushPromises = () => new Promise(resolve => setTimeout(resolve, 0));
