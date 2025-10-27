@@ -291,7 +291,7 @@ describe('Page Load Performance', () => {
   });
 
   describe('Animation Performance', () => {
-    test('should animate statistics smoothly', (done) => {
+    test('should animate statistics smoothly', () => {
       jest.useFakeTimers();
 
       document.body.innerHTML = '<span class="stat-number">0</span>';
@@ -306,8 +306,6 @@ describe('Page Load Performance', () => {
       let current = 0;
       let updates = 0;
 
-      const startTime = performance.now();
-
       const timer = setInterval(() => {
         current += increment;
         updates++;
@@ -315,21 +313,20 @@ describe('Page Load Performance', () => {
         if (current >= finalValue) {
           current = finalValue;
           clearInterval(timer);
-
-          const endTime = performance.now();
-          const animationTime = endTime - startTime;
-
-          // Animation should complete around expected duration
-          expect(updates).toBeLessThanOrEqual(steps + 1);
-
-          jest.useRealTimers();
-          done();
         }
 
         element.textContent = Math.floor(current);
       }, stepTime);
 
-      jest.advanceTimersByTime(duration);
+      // Advance timers to complete animation
+      jest.advanceTimersByTime(duration + stepTime);
+
+      // Animation should complete in expected number of steps
+      expect(updates).toBeGreaterThan(0);
+      expect(updates).toBeLessThanOrEqual(steps + 1);
+      expect(element.textContent).toBe(String(finalValue));
+
+      jest.useRealTimers();
     });
   });
 
