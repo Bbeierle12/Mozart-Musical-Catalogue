@@ -1,0 +1,554 @@
+{
+  "composer": {
+    "id": "handel",
+    "fullName": "George Frideric Handel",
+    "lastName": "Handel",
+    "firstName": "George Frideric",
+    "birthDate": "1685-02-23",
+    "birthPlace": "Halle, Duchy of Magdeburg",
+    "deathDate": "1759-04-14",
+    "deathPlace": "London, England",
+    "nationality": "German-British",
+    "period": "Baroque",
+    "catalogPrefix": "HWV",
+    "totalWorks": 612,
+    "biography": "George Frideric Handel was a German-British Baroque composer renowned for his operas, oratorios, anthems, concerti grossi, and organ concertos. Born in Germany, he spent most of his career in London, becoming a British subject in 1727. His most famous work, Messiah, remains one of the most frequently performed choral works in Western music."
+  },
+  "catalogSystem": {
+    "name": "Händel-Werke-Verzeichnis",
+    "abbreviation": "HWV",
+    "author": "Bernd Baselt",
+    "publicationYear": 1978,
+    "revisionYear": 1986,
+    "description": "The Händel-Werke-Verzeichnis is a catalogue of Handel's works compiled by Bernd Baselt and published between 1978 and 1986."
+  },
+  "categories": {
+    "operas": {
+      "name": "Operas",
+      "hwvRange": "1-42",
+      "description": "Italian operas composed primarily for London audiences",
+      "count": 42
+    },
+    "oratorios": {
+      "name": "Oratorios",
+      "hwvRange": "47-75",
+      "description": "English oratorios including Messiah and Israel in Egypt",
+      "count": 29
+    },
+    "vocal": {
+      "name": "Vocal Works",
+      "hwvRange": "76-256",
+      "description": "Cantatas, odes, anthems, and songs",
+      "subcategories": {
+        "anthems": {
+          "name": "Anthems",
+          "hwvRange": "246-256",
+          "count": 11
+        },
+        "cantatas": {
+          "name": "Cantatas",
+          "hwvRange": "77-177",
+          "count": 101
+        }
+      }
+    },
+    "orchestral": {
+      "name": "Orchestral Works",
+      "hwvRange": "289-356",
+      "description": "Concerti grossi, organ concertos, water music, fireworks music",
+      "subcategories": {
+        "concerti_grossi": {
+          "name": "Concerti Grossi",
+          "hwvRange": "312-330",
+          "count": 19
+        },
+        "organ_concertos": {
+          "name": "Organ Concertos",
+          "hwvRange": "289-311",
+          "count": 23
+        }
+      }
+    },
+    "chamber": {
+      "name": "Chamber Music",
+      "hwvRange": "357-408",
+      "description": "Sonatas and trio sonatas",
+      "count": 52
+    },
+    "keyboard": {
+      "name": "Keyboard Works",
+      "hwvRange": "426-612",
+      "description": "Suites, fugues, and pieces for harpsichord",
+      "count": 187
+    }
+  },
+  "works": [
+    {
+      "hwv": "HWV 56",
+      "title": "Messiah",
+      "category": "oratorios",
+      "yearComposed": 1741,
+      "premiereDate": "1742-04-13",
+      "premiereLocation": "Dublin, Ireland",
+      "key": "Multiple",
+      "movements": 53,
+      "duration": 140,
+      "text": "Biblical texts compiled by Charles Jennens",
+      "instrumentation": "SATB soloists, SATB choir, 2 trumpets, timpani, strings, continuo",
+      "description": "Handel's most famous oratorio, telling the story of Jesus Christ",
+      "famous": true,
+      "language": "English"
+    },
+    {
+      "hwv": "HWV 348",
+      "title": "Water Music Suite No. 1",
+      "category": "orchestral",
+      "yearComposed": 1717,
+      "key": "F major",
+      "movements": 11,
+      "duration": 32,
+      "instrumentation": "2 horns, 2 oboes, bassoon, strings, continuo",
+      "description": "Suite composed for King George I's trip on the Thames",
+      "famous": true,
+      "occasion": "Royal Thames pageant"
+    },
+    {
+      "hwv": "HWV 349",
+      "title": "Water Music Suite No. 2",
+      "category": "orchestral",
+      "yearComposed": 1717,
+      "key": "D major",
+      "movements": 5,
+      "duration": 15,
+      "instrumentation": "2 trumpets, 2 horns, 2 oboes, bassoon, strings, continuo",
+      "description": "Second suite from the Water Music",
+      "famous": true
+    },
+    {
+      "hwv": "HWV 350",
+      "title": "Water Music Suite No. 3",
+      "category": "orchestral",
+      "yearComposed": 1717,
+      "key": "G major",
+      "movements": 3,
+      "duration": 10,
+      "instrumentation": "Flute, strings, continuo",
+      "description": "Third suite from the Water Music",
+      "famous": true
+    },
+    {
+      "hwv": "HWV 351",
+      "title": "Music for the Royal Fireworks",
+      "category": "orchestral",
+      "yearComposed": 1749,
+      "premiereDate": "1749-04-27",
+      "premiereLocation": "Green Park, London",
+      "key": "D major",
+      "movements": 5,
+      "duration": 18,
+      "instrumentation": "24 oboes, 12 bassoons, 9 trumpets, 9 horns, 3 pairs of timpani, strings",
+      "description": "Celebratory music for fireworks display",
+      "famous": true,
+      "occasion": "Peace of Aix-la-Chapelle"
+    },
+    {
+      "hwv": "HWV 54",
+      "title": "Israel in Egypt",
+      "category": "oratorios",
+      "yearComposed": 1738,
+      "premiereDate": "1739-04-04",
+      "key": "Multiple",
+      "movements": 39,
+      "duration": 130,
+      "text": "Biblical: Exodus and Psalms",
+      "instrumentation": "SATB soloists, SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, continuo",
+      "description": "Oratorio depicting the Exodus from Egypt",
+      "language": "English",
+      "famous": true
+    },
+    {
+      "hwv": "HWV 55",
+      "title": "Saul",
+      "category": "oratorios",
+      "yearComposed": 1738,
+      "premiereDate": "1739-01-16",
+      "key": "Multiple",
+      "movements": 93,
+      "duration": 165,
+      "text": "Charles Jennens (based on 1 Samuel)",
+      "instrumentation": "SATB soloists, SATB choir, carillon, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, organ",
+      "description": "Dramatic oratorio about King Saul and David",
+      "language": "English"
+    },
+    {
+      "hwv": "HWV 58",
+      "title": "Judas Maccabaeus",
+      "category": "oratorios",
+      "yearComposed": 1746,
+      "premiereDate": "1747-04-01",
+      "key": "Multiple",
+      "movements": 60,
+      "duration": 145,
+      "text": "Thomas Morell",
+      "instrumentation": "SATB soloists, SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, continuo",
+      "description": "Heroic oratorio celebrating the Duke of Cumberland's victory",
+      "language": "English",
+      "famous": true
+    },
+    {
+      "hwv": "HWV 312",
+      "title": "Concerto Grosso Op. 6, No. 1",
+      "category": "orchestral",
+      "yearComposed": 1739,
+      "key": "G major",
+      "movements": 5,
+      "duration": 13,
+      "instrumentation": "Concertino (2 violins, cello), ripieno strings, continuo",
+      "description": "First of the twelve Op. 6 concerti grossi",
+      "opus": "Op. 6 No. 1"
+    },
+    {
+      "hwv": "HWV 319",
+      "title": "Concerto Grosso Op. 6, No. 8",
+      "category": "orchestral",
+      "yearComposed": 1739,
+      "key": "C minor",
+      "movements": 6,
+      "duration": 16,
+      "instrumentation": "Concertino (2 violins, cello), ripieno strings, continuo",
+      "description": "Eighth of the twelve Op. 6 concerti grossi",
+      "opus": "Op. 6 No. 8"
+    },
+    {
+      "hwv": "HWV 323",
+      "title": "Concerto Grosso Op. 6, No. 12",
+      "category": "orchestral",
+      "yearComposed": 1739,
+      "key": "B minor",
+      "movements": 5,
+      "duration": 14,
+      "instrumentation": "Concertino (2 violins, cello), ripieno strings, continuo",
+      "description": "Final of the twelve Op. 6 concerti grossi",
+      "opus": "Op. 6 No. 12"
+    },
+    {
+      "hwv": "HWV 289",
+      "title": "Organ Concerto Op. 4, No. 1",
+      "category": "orchestral",
+      "yearComposed": 1735,
+      "key": "G minor",
+      "movements": 4,
+      "duration": 12,
+      "instrumentation": "Organ solo, 2 oboes, strings, continuo",
+      "description": "First of the Op. 4 organ concertos",
+      "opus": "Op. 4 No. 1"
+    },
+    {
+      "hwv": "HWV 294",
+      "title": "Organ Concerto Op. 4, No. 6",
+      "category": "orchestral",
+      "yearComposed": 1736,
+      "key": "B-flat major",
+      "movements": 3,
+      "duration": 10,
+      "instrumentation": "Organ solo, strings, continuo",
+      "description": "Last of the Op. 4 organ concertos, includes harp",
+      "opus": "Op. 4 No. 6",
+      "alternate": "Harp Concerto"
+    },
+    {
+      "hwv": "HWV 7",
+      "title": "Rinaldo",
+      "category": "operas",
+      "yearComposed": 1711,
+      "premiereDate": "1711-02-24",
+      "premiereLocation": "Queen's Theatre, London",
+      "key": "Multiple",
+      "acts": 3,
+      "duration": 180,
+      "librettist": "Giacomo Rossi (after Tasso)",
+      "description": "First Italian opera composed for London stage",
+      "language": "Italian",
+      "famous": true,
+      "famousAria": "Lascia ch'io pianga"
+    },
+    {
+      "hwv": "HWV 17",
+      "title": "Giulio Cesare (Julius Caesar)",
+      "category": "operas",
+      "yearComposed": 1724,
+      "premiereDate": "1724-02-20",
+      "premiereLocation": "King's Theatre, London",
+      "key": "Multiple",
+      "acts": 3,
+      "duration": 210,
+      "librettist": "Nicola Francesco Haym",
+      "description": "Opera about Julius Caesar and Cleopatra",
+      "language": "Italian",
+      "famous": true
+    },
+    {
+      "hwv": "HWV 19",
+      "title": "Rodelinda",
+      "category": "operas",
+      "yearComposed": 1725,
+      "premiereDate": "1725-02-13",
+      "premiereLocation": "King's Theatre, London",
+      "key": "Multiple",
+      "acts": 3,
+      "duration": 195,
+      "librettist": "Nicola Francesco Haym (after Corneille)",
+      "description": "Opera about the Lombard queen",
+      "language": "Italian"
+    },
+    {
+      "hwv": "HWV 34",
+      "title": "Alcina",
+      "category": "operas",
+      "yearComposed": 1735,
+      "premiereDate": "1735-04-16",
+      "premiereLocation": "Covent Garden, London",
+      "key": "Multiple",
+      "acts": 3,
+      "duration": 200,
+      "librettist": "Antonio Fanzaglia (after Ariosto)",
+      "description": "Opera about the sorceress Alcina",
+      "language": "Italian",
+      "famous": true
+    },
+    {
+      "hwv": "HWV 40",
+      "title": "Serse (Xerxes)",
+      "category": "operas",
+      "yearComposed": 1738,
+      "premiereDate": "1738-04-15",
+      "premiereLocation": "King's Theatre, London",
+      "key": "Multiple",
+      "acts": 3,
+      "duration": 180,
+      "librettist": "Adapted from Nicolò Minato",
+      "description": "Opera seria with comic elements",
+      "language": "Italian",
+      "famous": true,
+      "famousAria": "Ombra mai fu (Largo)"
+    },
+    {
+      "hwv": "HWV 61",
+      "title": "Belshazzar",
+      "category": "oratorios",
+      "yearComposed": 1744,
+      "premiereDate": "1745-03-27",
+      "key": "Multiple",
+      "movements": 66,
+      "duration": 155,
+      "text": "Charles Jennens (Book of Daniel)",
+      "instrumentation": "SATB soloists, SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, continuo",
+      "description": "Dramatic oratorio about the fall of Babylon",
+      "language": "English"
+    },
+    {
+      "hwv": "HWV 65",
+      "title": "Jephtha",
+      "category": "oratorios",
+      "yearComposed": 1751,
+      "premiereDate": "1752-02-26",
+      "key": "Multiple",
+      "movements": 67,
+      "duration": 170,
+      "text": "Thomas Morell (Book of Judges)",
+      "instrumentation": "SATB soloists, SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, organ",
+      "description": "Handel's last oratorio, composed as his eyesight failed",
+      "language": "English",
+      "note": "Handel's final dramatic work"
+    },
+    {
+      "hwv": "HWV 427",
+      "title": "Suite No. 1 in A major",
+      "category": "keyboard",
+      "yearComposed": 1720,
+      "key": "A major",
+      "movements": 4,
+      "duration": 12,
+      "instrumentation": "Harpsichord",
+      "description": "First of the Eight Great Suites",
+      "collection": "Eight Great Suites"
+    },
+    {
+      "hwv": "HWV 430",
+      "title": "Suite No. 4 in D minor",
+      "category": "keyboard",
+      "yearComposed": 1720,
+      "key": "D minor",
+      "movements": 4,
+      "duration": 15,
+      "instrumentation": "Harpsichord",
+      "description": "Fourth suite, contains the Sarabande with variations",
+      "collection": "Eight Great Suites"
+    },
+    {
+      "hwv": "HWV 432",
+      "title": "Suite No. 6 in F-sharp minor",
+      "category": "keyboard",
+      "yearComposed": 1720,
+      "key": "F-sharp minor",
+      "movements": 4,
+      "duration": 13,
+      "instrumentation": "Harpsichord",
+      "description": "Sixth suite, ends with a fugue",
+      "collection": "Eight Great Suites"
+    },
+    {
+      "hwv": "HWV 434",
+      "title": "Suite No. 8 in F minor",
+      "category": "keyboard",
+      "yearComposed": 1720,
+      "key": "F minor",
+      "movements": 4,
+      "duration": 14,
+      "instrumentation": "Harpsichord",
+      "description": "Eighth and final suite of the collection",
+      "collection": "Eight Great Suites"
+    },
+    {
+      "hwv": "HWV 363",
+      "title": "Sonata in G minor for Violin and Continuo",
+      "category": "chamber",
+      "yearComposed": 1724,
+      "key": "G minor",
+      "movements": 4,
+      "duration": 9,
+      "instrumentation": "Violin, continuo",
+      "description": "Violin sonata in Italian style",
+      "opus": "Op. 1 No. 6"
+    },
+    {
+      "hwv": "HWV 392",
+      "title": "Trio Sonata in B minor",
+      "category": "chamber",
+      "yearComposed": 1734,
+      "key": "B minor",
+      "movements": 4,
+      "duration": 11,
+      "instrumentation": "2 violins, continuo",
+      "description": "Trio sonata from Op. 2",
+      "opus": "Op. 2 No. 1"
+    },
+    {
+      "hwv": "HWV 246a",
+      "title": "Zadok the Priest",
+      "category": "vocal",
+      "yearComposed": 1727,
+      "premiereDate": "1727-10-11",
+      "premiereLocation": "Westminster Abbey, London",
+      "key": "D major",
+      "duration": 6,
+      "text": "Biblical (1 Kings)",
+      "instrumentation": "SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, continuo",
+      "description": "Coronation anthem for George II",
+      "occasion": "Coronation of King George II",
+      "famous": true,
+      "note": "Performed at every British coronation since 1727"
+    },
+    {
+      "hwv": "HWV 251",
+      "title": "The King Shall Rejoice",
+      "category": "vocal",
+      "yearComposed": 1727,
+      "key": "D major",
+      "duration": 11,
+      "text": "Biblical (Psalms)",
+      "instrumentation": "SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, continuo",
+      "description": "Second of the four Coronation Anthems",
+      "occasion": "Coronation of King George II"
+    },
+    {
+      "hwv": "HWV 70",
+      "title": "Solomon",
+      "category": "oratorios",
+      "yearComposed": 1748,
+      "premiereDate": "1749-03-17",
+      "key": "Multiple",
+      "movements": 52,
+      "duration": 150,
+      "text": "Anonymous (based on 1 Kings and Song of Songs)",
+      "instrumentation": "SATB soloists, SATB choir, 2 trumpets, timpani, 2 oboes, 2 bassoons, strings, continuo",
+      "description": "Oratorio about King Solomon",
+      "language": "English",
+      "famousMovement": "Arrival of the Queen of Sheba"
+    }
+  ],
+  "manuscripts": {
+    "autographs": [
+      {
+        "work": "HWV 56",
+        "title": "Messiah",
+        "location": "British Library, London",
+        "catalogRef": "RM 20.f.2",
+        "digitized": true,
+        "url": "http://www.bl.uk/manuscripts/"
+      },
+      {
+        "work": "HWV 348-350",
+        "title": "Water Music",
+        "location": "British Library, London",
+        "catalogRef": "RM 20.g.5-7",
+        "digitized": true
+      },
+      {
+        "work": "HWV 351",
+        "title": "Music for the Royal Fireworks",
+        "location": "British Library, London",
+        "catalogRef": "RM 20.g.8",
+        "digitized": true
+      }
+    ]
+  },
+  "recordings": {
+    "reference": [
+      {
+        "work": "HWV 56",
+        "title": "Messiah",
+        "conductor": "John Eliot Gardiner",
+        "ensemble": "English Baroque Soloists",
+        "year": 1982,
+        "label": "Philips"
+      },
+      {
+        "work": "HWV 348-350",
+        "title": "Water Music",
+        "conductor": "Trevor Pinnock",
+        "ensemble": "The English Concert",
+        "year": 1983,
+        "label": "Archiv Produktion"
+      },
+      {
+        "work": "HWV 312-323",
+        "title": "Concerti Grossi Op. 6",
+        "conductor": "Trevor Pinnock",
+        "ensemble": "The English Concert",
+        "year": 1983,
+        "label": "Archiv Produktion"
+      }
+    ]
+  },
+  "bibliography": [
+    {
+      "author": "Donald Burrows",
+      "title": "Handel",
+      "year": 2012,
+      "publisher": "Oxford University Press"
+    },
+    {
+      "author": "Jonathan Keates",
+      "title": "Handel: The Man and His Music",
+      "year": 2008,
+      "publisher": "Bodley Head"
+    },
+    {
+      "author": "Winton Dean",
+      "title": "Handel's Dramatic Oratorios and Masques",
+      "year": 1959,
+      "publisher": "Oxford University Press"
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "composer": {
+    "id": "vivaldi",
+    "fullName": "Antonio Lucio Vivaldi",
+    "birthDate": "1678-03-04",
+    "deathDate": "1741-07-28",
+    "nationality": "Italian",
+    "period": "Baroque",
+    "catalogSystem": "RV",
+    "catalogSystemFullName": "Ryom-Verzeichnis",
+    "totalWorks": 800,
+    "worksListed": 35,
+    "biography": "Antonio Vivaldi (1678-1741) was an Italian Baroque composer, virtuoso violinist, teacher, and Catholic priest. Born in Venice, he was ordained in 1703 but ceased celebrating Mass shortly after due to health reasons. Vivaldi spent most of his career at the Ospedale della Pietà, a home for abandoned children where he taught violin and composed music for the all-female music ensemble. He is recognized as one of the greatest Baroque composers, known particularly for his concertos. His most famous work, The Four Seasons, is among the most popular pieces of Baroque music. Vivaldi composed over 500 concertos, along with numerous operas, sacred choral works, and chamber music. His music was highly influential on Johann Sebastian Bach and other composers. Despite his fame during his lifetime, Vivaldi died in poverty in Vienna in 1741 and was largely forgotten until the 20th century revival of interest in Baroque music.",
+    "keyContributions": [
+      "Virtuoso violinist who revolutionized the concerto form",
+      "Composed The Four Seasons, one of the most popular classical works",
+      "Pioneer of programmatic music with descriptive concertos",
+      "Influenced J.S. Bach and the development of instrumental music",
+      "Master of the ritornello form in concertos"
+    ]
+  },
+  "categories": {
+    "concertos": {
+      "name": "Concertos",
+      "rvRange": "RV 1-558",
+      "totalWorks": 558,
+      "description": "Vivaldi composed over 500 concertos, primarily for violin but also for other instruments. These works established the three-movement fast-slow-fast structure and ritornello form that became standard.",
+      "subcategories": {
+        "violin": "Over 230 violin concertos",
+        "strings": "Concertos for cello, viola d'amore, multiple violins",
+        "winds": "Concertos for bassoon, oboe, flute, recorder",
+        "mixed": "Concertos for multiple instruments"
+      }
+    },
+    "sacred": {
+      "name": "Sacred Vocal Music",
+      "rvRange": "RV 581-630",
+      "totalWorks": 60,
+      "description": "Sacred choral works composed primarily for the Ospedale della Pietà, including masses, motets, oratorios, and psalm settings.",
+      "subcategories": {
+        "choral": "Gloria, Magnificat, masses",
+        "motets": "Solo motets and psalm settings",
+        "oratorios": "Large-scale sacred dramas"
+      }
+    },
+    "operas": {
+      "name": "Operas",
+      "rvRange": "RV 701-739",
+      "totalWorks": 49,
+      "description": "Vivaldi composed nearly 50 operas, most now lost. These works were popular in Venice and across Europe during his lifetime.",
+      "note": "Only about 20 operas survive in complete or near-complete form"
+    },
+    "chamber": {
+      "name": "Chamber Music",
+      "rvRange": "RV 1-100 (mixed)",
+      "totalWorks": 90,
+      "description": "Sonatas, trio sonatas, and other chamber works for small ensembles."
+    },
+    "orchestral": {
+      "name": "Orchestral Works",
+      "description": "Sinfonias and other orchestral compositions without soloists."
+    }
+  },
+  "works": [
+    {
+      "rv": "RV 269",
+      "title": "Violin Concerto in E major, Op. 8 No. 1 'Spring' (La Primavera)",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 8 No. 1",
+      "yearComposed": 1723,
+      "publishedYear": 1725,
+      "key": "E major",
+      "movements": 3,
+      "duration": 10,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCycle": "The Four Seasons",
+      "programmatic": true,
+      "famous": true,
+      "description": "The first concerto of The Four Seasons, depicting springtime with bird calls, flowing streams, and a thunderstorm. Each movement is accompanied by a sonnet describing the scenes.",
+      "movements_detail": [
+        "Allegro - Springtime arrives with bird songs",
+        "Largo e pianissimo sempre - The goatherd sleeps",
+        "Allegro pastorale - Nymphs and shepherds dance"
+      ],
+      "manuscript": "Dresden, Sächsische Landesbibliothek",
+      "dedication": "Bohemian Count Václav Morzin"
+    },
+    {
+      "rv": "RV 315",
+      "title": "Violin Concerto in G minor, Op. 8 No. 2 'Summer' (L'Estate)",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 8 No. 2",
+      "yearComposed": 1723,
+      "publishedYear": 1725,
+      "key": "G minor",
+      "movements": 3,
+      "duration": 11,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCycle": "The Four Seasons",
+      "programmatic": true,
+      "famous": true,
+      "description": "The second concerto depicts the heat and storms of summer, with languid melodies contrasting with violent weather effects.",
+      "movements_detail": [
+        "Allegro non molto - The heat of summer",
+        "Adagio e piano - Presto e forte - Fear of storms",
+        "Presto - Summer storm"
+      ]
+    },
+    {
+      "rv": "RV 293",
+      "title": "Violin Concerto in F major, Op. 8 No. 3 'Autumn' (L'Autunno)",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 8 No. 3",
+      "yearComposed": 1723,
+      "publishedYear": 1725,
+      "key": "F major",
+      "movements": 3,
+      "duration": 11,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCycle": "The Four Seasons",
+      "programmatic": true,
+      "famous": true,
+      "description": "Celebrating the harvest with peasant dances and a hunting scene. The final movement depicts a dramatic hunt.",
+      "movements_detail": [
+        "Allegro - Peasants celebrate the harvest with dance and song",
+        "Adagio molto - The drunkards sleep",
+        "Allegro - The hunt"
+      ]
+    },
+    {
+      "rv": "RV 297",
+      "title": "Violin Concerto in F minor, Op. 8 No. 4 'Winter' (L'Inverno)",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 8 No. 4",
+      "yearComposed": 1723,
+      "publishedYear": 1725,
+      "key": "F minor",
+      "movements": 3,
+      "duration": 9,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCycle": "The Four Seasons",
+      "programmatic": true,
+      "famous": true,
+      "description": "The final concerto portrays the bitter cold of winter, chattering teeth, and people seeking warmth by the fire.",
+      "movements_detail": [
+        "Allegro non molto - Shivering in the cold snow",
+        "Largo - By the fire while rain outside",
+        "Allegro - Walking on ice and falling"
+      ]
+    },
+    {
+      "rv": "RV 589",
+      "title": "Gloria in D major",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1715,
+      "key": "D major",
+      "movements": 12,
+      "duration": 30,
+      "instrumentation": "Soprano solo, SATB chorus, oboe, trumpet, strings, continuo",
+      "famous": true,
+      "description": "One of Vivaldi's most famous sacred works, featuring brilliant vocal writing and festive orchestration. Composed for the Ospedale della Pietà.",
+      "movements_detail": [
+        "Gloria in excelsis Deo (Chorus)",
+        "Et in terra pax (Chorus)",
+        "Laudamus te (Soprano duet)",
+        "Gratias agimus tibi (Chorus)",
+        "Propter magnam gloriam (Chorus)",
+        "Domine Deus, Rex coelestis (Soprano)",
+        "Domine Fili unigenite (Chorus)",
+        "Domine Deus, Agnus Dei (Alto and chorus)",
+        "Qui tollis peccata mundi (Chorus)",
+        "Qui sedes ad dexteram Patris (Alto)",
+        "Quoniam tu solus sanctus (Chorus)",
+        "Cum Sancto Spiritu (Chorus)"
+      ],
+      "manuscript": "Turin, Biblioteca Nazionale"
+    },
+    {
+      "rv": "RV 580",
+      "title": "Gloria in D major (Alternative setting)",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1708,
+      "key": "D major",
+      "movements": 11,
+      "duration": 28,
+      "instrumentation": "SATB chorus, strings, continuo",
+      "description": "An earlier Gloria setting, less well-known than RV 589 but equally impressive."
+    },
+    {
+      "rv": "RV 610",
+      "title": "Magnificat in G minor",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1715,
+      "key": "G minor",
+      "movements": 9,
+      "duration": 15,
+      "instrumentation": "SATB soloists, SATB chorus, strings, continuo",
+      "description": "A dramatic setting of the Magnificat text with virtuosic vocal writing and expressive harmonies."
+    },
+    {
+      "rv": "RV 230",
+      "title": "Violin Concerto in D major, Op. 3 No. 9",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 3 No. 9",
+      "yearComposed": 1711,
+      "publishedYear": 1711,
+      "key": "D major",
+      "movements": 3,
+      "duration": 9,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCollection": "L'estro armonico",
+      "famous": true,
+      "description": "From the influential L'estro armonico collection, this concerto was transcribed for organ by J.S. Bach (BWV 594).",
+      "bachTranscription": "BWV 594"
+    },
+    {
+      "rv": "RV 565",
+      "title": "Concerto for Strings in C major",
+      "category": "concertos",
+      "subcategory": "strings",
+      "yearComposed": 1720,
+      "key": "C major",
+      "movements": 3,
+      "duration": 8,
+      "instrumentation": "Strings, continuo",
+      "partOfCollection": "L'estro armonico, Op. 3 No. 12",
+      "description": "A concerto for string ensemble without solo violin, demonstrating Vivaldi's orchestral writing."
+    },
+    {
+      "rv": "RV 356",
+      "title": "Violin Concerto in G minor 'Summer' (from Il cimento)",
+      "category": "concertos",
+      "subcategory": "violin",
+      "yearComposed": 1725,
+      "key": "G minor",
+      "movements": 3,
+      "duration": 10,
+      "instrumentation": "Solo violin, strings, continuo",
+      "description": "A different summer-themed concerto from Il cimento dell'armonia e dell'inventione."
+    },
+    {
+      "rv": "RV 522",
+      "title": "Violin Concerto in A minor, Op. 3 No. 6",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 3 No. 6",
+      "yearComposed": 1711,
+      "publishedYear": 1711,
+      "key": "A minor",
+      "movements": 3,
+      "duration": 8,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCollection": "L'estro armonico",
+      "famous": true,
+      "description": "Another famous concerto from L'estro armonico, transcribed by Bach for harpsichord (BWV 596).",
+      "bachTranscription": "BWV 596"
+    },
+    {
+      "rv": "RV 425",
+      "title": "Violin Concerto in A minor, Op. 4 No. 4",
+      "category": "concertos",
+      "subcategory": "violin",
+      "opus": "Op. 4 No. 4",
+      "yearComposed": 1712,
+      "publishedYear": 1714,
+      "key": "A minor",
+      "movements": 3,
+      "duration": 9,
+      "instrumentation": "Solo violin, strings, continuo",
+      "partOfCollection": "La stravaganza"
+    },
+    {
+      "rv": "RV 581",
+      "title": "Dixit Dominus in D major",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1717,
+      "key": "D major",
+      "movements": 11,
+      "duration": 28,
+      "instrumentation": "SATB soloists, double chorus, strings, continuo",
+      "description": "A grand setting of Psalm 110 with double chorus, showing Vivaldi's mastery of large-scale choral writing."
+    },
+    {
+      "rv": "RV 596",
+      "title": "Stabat Mater in F minor",
+      "category": "sacred",
+      "subcategory": "motets",
+      "yearComposed": 1712,
+      "key": "F minor",
+      "movements": 9,
+      "duration": 18,
+      "instrumentation": "Alto solo, strings, continuo",
+      "famous": true,
+      "description": "A deeply expressive solo motet depicting Mary's sorrow at the cross. One of Vivaldi's most moving sacred works."
+    },
+    {
+      "rv": "RV 626",
+      "title": "Nisi Dominus in G minor",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1716,
+      "key": "G minor",
+      "movements": 9,
+      "duration": 22,
+      "instrumentation": "Alto solo, strings, continuo",
+      "description": "A setting of Psalm 127 featuring virtuosic alto solos, particularly the famous 'Cum dederit' movement."
+    },
+    {
+      "rv": "RV 478",
+      "title": "Bassoon Concerto in E minor",
+      "category": "concertos",
+      "subcategory": "winds",
+      "yearComposed": 1720,
+      "key": "E minor",
+      "movements": 3,
+      "duration": 10,
+      "instrumentation": "Solo bassoon, strings, continuo",
+      "description": "One of 39 bassoon concertos, demonstrating Vivaldi's skill in writing for wind instruments."
+    },
+    {
+      "rv": "RV 444",
+      "title": "Flute Concerto in D major 'Il Gardellino' (The Goldfinch), Op. 10 No. 3",
+      "category": "concertos",
+      "subcategory": "winds",
+      "opus": "Op. 10 No. 3",
+      "yearComposed": 1728,
+      "key": "D major",
+      "movements": 3,
+      "duration": 11,
+      "instrumentation": "Solo flute, strings, continuo",
+      "programmatic": true,
+      "famous": true,
+      "description": "A charming flute concerto imitating the song of a goldfinch, from the set of six flute concertos Op. 10."
+    },
+    {
+      "rv": "RV 428",
+      "title": "Flute Concerto in G minor 'La Notte' (The Night), Op. 10 No. 2",
+      "category": "concertos",
+      "subcategory": "winds",
+      "opus": "Op. 10 No. 2",
+      "yearComposed": 1728,
+      "key": "G minor",
+      "movements": 6,
+      "duration": 9,
+      "instrumentation": "Solo flute, strings, continuo",
+      "programmatic": true,
+      "famous": true,
+      "description": "A programmatic concerto depicting nighttime scenes including sleep and dreams."
+    },
+    {
+      "rv": "RV 558",
+      "title": "Concerto for Violin and Organ in D minor",
+      "category": "concertos",
+      "subcategory": "mixed",
+      "yearComposed": 1716,
+      "key": "D minor",
+      "movements": 3,
+      "duration": 12,
+      "instrumentation": "Solo violin, solo organ, strings, continuo",
+      "description": "A unique double concerto combining violin and organ soloists."
+    },
+    {
+      "rv": "RV 578",
+      "title": "Concerto grosso in D minor, Op. 3 No. 11",
+      "category": "concertos",
+      "subcategory": "strings",
+      "opus": "Op. 3 No. 11",
+      "yearComposed": 1711,
+      "publishedYear": 1711,
+      "key": "D minor",
+      "movements": 3,
+      "duration": 9,
+      "instrumentation": "Two violins, cello, strings, continuo",
+      "partOfCollection": "L'estro armonico",
+      "bachTranscription": "BWV 596",
+      "description": "A concerto grosso with multiple soloists, transcribed by Bach."
+    },
+    {
+      "rv": "RV 253",
+      "title": "Concerto for Two Violins in D minor, Op. 3 No. 11",
+      "category": "concertos",
+      "subcategory": "strings",
+      "opus": "Op. 3 No. 11",
+      "yearComposed": 1711,
+      "key": "D minor",
+      "movements": 3,
+      "duration": 9,
+      "instrumentation": "Two solo violins, strings, continuo",
+      "partOfCollection": "L'estro armonico",
+      "description": "A double violin concerto with brilliant dialogue between soloists."
+    },
+    {
+      "rv": "RV 454",
+      "title": "Concerto for Oboe in C major",
+      "category": "concertos",
+      "subcategory": "winds",
+      "yearComposed": 1715,
+      "key": "C major",
+      "movements": 3,
+      "duration": 9,
+      "instrumentation": "Solo oboe, strings, continuo",
+      "description": "One of several oboe concertos showcasing the instrument's lyrical qualities."
+    },
+    {
+      "rv": "RV 433",
+      "title": "Concerto for Two Mandolins in G major",
+      "category": "concertos",
+      "subcategory": "strings",
+      "yearComposed": 1720,
+      "key": "G major",
+      "movements": 3,
+      "duration": 11,
+      "instrumentation": "Two mandolins, strings, continuo",
+      "famous": true,
+      "description": "A charming and popular concerto for two mandolins, demonstrating Vivaldi's versatility."
+    },
+    {
+      "rv": "RV 540",
+      "title": "Concerto for Violin and Two Cellos in C major",
+      "category": "concertos",
+      "subcategory": "strings",
+      "yearComposed": 1720,
+      "key": "C major",
+      "movements": 3,
+      "duration": 10,
+      "instrumentation": "Solo violin, two cellos, strings, continuo",
+      "description": "An unusual combination featuring dialogue between violin and two cellos."
+    },
+    {
+      "rv": "RV 93",
+      "title": "Sonata for Violin and Continuo in D major, Op. 2 No. 12 'La Follia'",
+      "category": "chamber",
+      "yearComposed": 1705,
+      "publishedYear": 1709,
+      "key": "D minor",
+      "movements": 1,
+      "duration": 11,
+      "instrumentation": "Violin, continuo",
+      "famous": true,
+      "description": "A set of variations on the famous 'La Folia' theme, demonstrating virtuosic violin technique."
+    },
+    {
+      "rv": "RV 156",
+      "title": "Sinfonia in B minor 'Al Santo Sepolcro'",
+      "category": "orchestral",
+      "yearComposed": 1720,
+      "key": "B minor",
+      "movements": 2,
+      "duration": 7,
+      "instrumentation": "Strings, continuo",
+      "description": "A somber orchestral work depicting the Holy Sepulchre, used as an introduction to sacred works."
+    },
+    {
+      "rv": "RV 151",
+      "title": "Sinfonia in C major",
+      "category": "orchestral",
+      "yearComposed": 1720,
+      "key": "C major",
+      "movements": 3,
+      "duration": 6,
+      "instrumentation": "Strings, continuo",
+      "description": "A festive orchestral sinfonia in three movements."
+    },
+    {
+      "rv": "RV 807",
+      "title": "Kyrie in G minor",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1715,
+      "key": "G minor",
+      "movements": 2,
+      "duration": 5,
+      "instrumentation": "SATB chorus, strings, continuo",
+      "description": "A brief but expressive setting of the Kyrie text."
+    },
+    {
+      "rv": "RV 621",
+      "title": "Lauda Jerusalem in E major",
+      "category": "sacred",
+      "subcategory": "choral",
+      "yearComposed": 1716,
+      "key": "E major",
+      "movements": 6,
+      "duration": 12,
+      "instrumentation": "SATB chorus, strings, continuo",
+      "description": "A joyful setting of Psalm 147 with festive orchestration."
+    },
+    {
+      "rv": "RV 627",
+      "title": "Nulla in mundo pax sincera (Motet)",
+      "category": "sacred",
+      "subcategory": "motets",
+      "yearComposed": 1735,
+      "key": "E major",
+      "movements": 3,
+      "duration": 11,
+      "instrumentation": "Soprano solo, strings, continuo",
+      "famous": true,
+      "description": "One of Vivaldi's most beautiful motets, featuring a lyrical soprano solo. The opening aria is particularly famous."
+    },
+    {
+      "rv": "RV 711",
+      "title": "Orlando furioso (Opera)",
+      "category": "operas",
+      "yearComposed": 1727,
+      "premiereDate": "1727-11-01",
+      "premiereLocation": "Venice, Teatro Sant'Angelo",
+      "acts": 3,
+      "description": "An opera based on Ariosto's epic poem, one of Vivaldi's most successful operatic works."
+    },
+    {
+      "rv": "RV 714",
+      "title": "L'Olimpiade (Opera)",
+      "category": "operas",
+      "yearComposed": 1734,
+      "premiereDate": "1734-02-17",
+      "premiereLocation": "Venice, Teatro Sant'Angelo",
+      "acts": 3,
+      "description": "An opera based on Metastasio's libretto, featuring elaborate arias and ensemble numbers."
+    },
+    {
+      "rv": "RV 728",
+      "title": "La Griselda (Opera)",
+      "category": "operas",
+      "yearComposed": 1735,
+      "premiereDate": "1735-05-18",
+      "premiereLocation": "Venice, Teatro San Samuele",
+      "acts": 3,
+      "description": "One of Vivaldi's later operas, telling the story of the patient Griselda."
+    }
+  ],
+  "notableCollections": {
+    "ilCimento": {
+      "title": "Il cimento dell'armonia e dell'inventione (The Contest between Harmony and Invention)",
+      "opus": "Op. 8",
+      "yearPublished": 1725,
+      "totalWorks": 12,
+      "description": "A collection of 12 violin concertos including The Four Seasons (Nos. 1-4). The collection demonstrates Vivaldi's mastery of both programmatic and abstract concerto writing.",
+      "includes": ["The Four Seasons", "RV 269", "RV 315", "RV 293", "RV 297"]
+    },
+    "estroArmonico": {
+      "title": "L'estro armonico (Harmonic Inspiration)",
+      "opus": "Op. 3",
+      "yearPublished": 1711,
+      "totalWorks": 12,
+      "description": "A groundbreaking collection of 12 concertos that established the Italian concerto style across Europe. Many were transcribed by J.S. Bach.",
+      "bachTranscriptions": ["BWV 593", "BWV 594", "BWV 596", "BWV 972", "BWV 973", "BWV 975", "BWV 976", "BWV 978", "BWV 980"]
+    },
+    "laStravaganza": {
+      "title": "La stravaganza (The Extravagance)",
+      "opus": "Op. 4",
+      "yearPublished": 1714,
+      "totalWorks": 12,
+      "description": "Twelve violin concertos dedicated to Venetian nobleman Vettor Delfin, showcasing Vivaldi's virtuosic writing."
+    }
+  },
+  "manuscript_locations": [
+    "Dresden, Sächsische Landesbibliothek (largest collection)",
+    "Turin, Biblioteca Nazionale",
+    "Vienna, Österreichische Nationalbibliothek",
+    "Manchester, Chetham's Library",
+    "Milan, Conservatorio Giuseppe Verdi"
+  ],
+  "reference_recordings": [
+    {
+      "work": "The Four Seasons",
+      "performers": "Fabio Biondi, Europa Galante",
+      "label": "Virgin Classics",
+      "year": 1991,
+      "notes": "Period instrument recording"
+    },
+    {
+      "work": "Gloria RV 589",
+      "performers": "Taverner Consort, Andrew Parrott",
+      "label": "EMI",
+      "year": 1989,
+      "notes": "Historically informed performance"
+    },
+    {
+      "work": "L'estro armonico",
+      "performers": "Academy of Ancient Music, Christopher Hogwood",
+      "label": "Decca",
+      "year": 1976,
+      "notes": "Complete Op. 3"
+    }
+  ],
+  "bibliography": [
+    "Talbot, Michael. Vivaldi. 2nd ed. Oxford University Press, 2000.",
+    "Heller, Karl. Antonio Vivaldi: The Red Priest of Venice. Amadeus Press, 1997.",
+    "Kolneder, Walter. Antonio Vivaldi: His Life and Work. University of California Press, 1970.",
+    "Ryom, Peter. Répertoire des oeuvres d'Antonio Vivaldi (RV). Copenhagen, 1986."
+  ],
+  "metadata": {
+    "lastUpdated": "2025-01-26",
+    "version": "1.0",
+    "completeness": "35 of ~800 works catalogued",
+    "nextUpdates": [
+      "Additional violin concertos from Op. 3-12",
+      "Complete opera list",
+      "Chamber music sonatas",
+      "Additional sacred works"
+    ]
+  }
+}
