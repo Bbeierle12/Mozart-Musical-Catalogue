@@ -5,6 +5,12 @@ module.exports = {
     '**/__tests__/**/*.js',
     '**/?(*.)+(spec|test).js'
   ],
+  // End-to-end specs in tests/e2e are run by Playwright (npm run test:e2e),
+  // not by jsdom/jest, so they are excluded from the default jest run.
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/tests/e2e/'
+  ],
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'assets/js/**/*.js',

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Joseph Haydn">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3498db"/>
+      <stop offset="1" stop-color="#21618c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <g fill="#ffffff" opacity="0.92">
+    <circle cx="200" cy="185" r="78"/>
+    <path d="M70 470c0-78 58-132 130-132s130 54 130 132z"/>
+  </g>
+  <g fill="#21618c" opacity="0.25" font-family="Georgia, serif" font-weight="700">
+    <text x="200" y="205" text-anchor="middle" font-size="72">JH</text>
+  </g>
+  <rect x="0" y="430" width="400" height="70" fill="rgba(0,0,0,0.35)"/>
+  <text x="200" y="462" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="26" font-weight="700">Haydn</text>
+  <text x="200" y="486" text-anchor="middle" fill="#ecf0f1" font-family="Segoe UI, Arial, sans-serif" font-size="15">1732 – 1809 · Classical</text>
+</svg>

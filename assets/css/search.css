@@ -509,3 +509,48 @@
     font-family: monospace;
     font-weight: 600;
 }
+/* Search result cards (rendered by search.js) */
+.result-group {
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-grey);
+    padding-bottom: var(--spacing-xs);
+}
+
+.result-card {
+    background: var(--bg-white);
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.result-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.result-card h3 {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--primary-color);
+    font-size: 1.05rem;
+}
+
+.result-card .result-meta {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 2px;
+}
+
+.result-card .result-sub {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin: 0 0 var(--spacing-xs);
+}
+
+.result-card .result-links a {
+    margin-right: var(--spacing-sm);
+}
