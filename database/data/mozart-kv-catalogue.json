@@ -1,0 +1,575 @@
+{
+  "composer": {
+    "id": "mozart",
+    "fullName": "Wolfgang Amadeus Mozart",
+    "lastName": "Mozart",
+    "firstName": "Wolfgang Amadeus",
+    "birthDate": "1756-01-27",
+    "birthPlace": "Salzburg, Archbishopric of Salzburg",
+    "deathDate": "1791-12-05",
+    "deathPlace": "Vienna, Archduchy of Austria",
+    "nationality": "Austrian",
+    "period": "Classical",
+    "catalogPrefix": "K",
+    "totalWorks": 626,
+    "worksListed": 38,
+    "biography": "Wolfgang Amadeus Mozart (1756-1791) was a prolific and influential composer of the Classical period. Born in Salzburg, he showed prodigious ability from his earliest childhood, already competent on keyboard and violin and composing from the age of five. Touring Europe as a child, he astonished royal courts with his gifts. He composed more than 600 works spanning virtually every genre of his era, including symphonies, concertos, operas, chamber music, and sacred works. Mozart is widely regarded as among the greatest composers in the history of Western music, admired for the melodic beauty, formal elegance, and emotional depth of his music. He spent his final decade in Vienna, where he produced many of his best-known works, before dying at the age of 35 while composing his Requiem.",
+    "keyContributions": [
+      "Brought the Classical concerto, especially the piano concerto, to its highest form",
+      "Composed operas (Le nozze di Figaro, Don Giovanni, Die Zauberflöte) that remain repertoire cornerstones",
+      "Perfected the Classical symphony, culminating in the final trilogy of 1788",
+      "Master of chamber music, including the string quartets dedicated to Haydn",
+      "Synthesised galant grace with contrapuntal depth learned from Bach and Handel"
+    ]
+  },
+  "catalogSystem": {
+    "name": "Köchel-Verzeichnis",
+    "abbreviation": "K",
+    "author": "Ludwig von Köchel",
+    "publicationYear": 1862,
+    "revisionYear": 1964,
+    "description": "The Köchel catalogue (Köchel-Verzeichnis, abbreviated K. or KV) is the chronological catalogue of the compositions of Wolfgang Amadeus Mozart, originally created by Ludwig von Köchel in 1862. The numbers run roughly in order of composition, from K. 1 to the unfinished Requiem, K. 626."
+  },
+  "categories": {
+    "symphonies": {
+      "name": "Symphonies",
+      "description": "Mozart composed roughly 41 numbered symphonies, culminating in the final three (Nos. 39, 40, 41) written in the summer of 1788.",
+      "count": 41
+    },
+    "operas": {
+      "name": "Operas & Stage Works",
+      "description": "Mozart's operas span opera seria, opera buffa, and German Singspiel, and include several of the most performed works in the repertory.",
+      "count": 22
+    },
+    "concertos": {
+      "name": "Concertos",
+      "description": "Includes 27 piano concertos, 5 violin concertos, and concertos for clarinet, horn, flute, oboe, and bassoon, plus the Sinfonia Concertante.",
+      "count": 50
+    },
+    "chamber": {
+      "name": "Chamber Music",
+      "description": "String quartets, string quintets, and wind chamber works, including the six 'Haydn' Quartets and the Clarinet Quintet.",
+      "count": 100
+    },
+    "sacred": {
+      "name": "Sacred & Choral",
+      "description": "Masses, motets, and other sacred works, including the Requiem, the 'Great' Mass in C minor, and Ave verum corpus.",
+      "count": 60
+    },
+    "keyboard": {
+      "name": "Keyboard Music",
+      "description": "Piano sonatas, fantasias, variations, and works for two pianos or piano four hands.",
+      "count": 70
+    },
+    "serenades": {
+      "name": "Serenades & Divertimenti",
+      "description": "Light, multi-movement works for various ensembles, including Eine kleine Nachtmusik and the 'Gran Partita'.",
+      "count": 40
+    }
+  },
+  "works": [
+    {
+      "kv": "K. 550",
+      "title": "Symphony No. 40 in G minor",
+      "category": "symphonies",
+      "yearComposed": 1788,
+      "key": "G minor",
+      "movements": 4,
+      "duration": 33,
+      "instrumentation": "Flute, 2 oboes, 2 clarinets, 2 bassoons, 2 horns, strings",
+      "famous": true,
+      "description": "One of only two symphonies Mozart wrote in a minor key, celebrated for its urgent, restless opening theme and emotional intensity. Part of the final trilogy of symphonies composed in the summer of 1788."
+    },
+    {
+      "kv": "K. 551",
+      "title": "Symphony No. 41 in C major 'Jupiter'",
+      "category": "symphonies",
+      "yearComposed": 1788,
+      "key": "C major",
+      "movements": 4,
+      "duration": 33,
+      "instrumentation": "Flute, 2 oboes, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "famous": true,
+      "description": "Mozart's last symphony, nicknamed 'Jupiter', famed for its monumental finale that combines five themes in a dazzling display of counterpoint."
+    },
+    {
+      "kv": "K. 543",
+      "title": "Symphony No. 39 in E-flat major",
+      "category": "symphonies",
+      "yearComposed": 1788,
+      "key": "E-flat major",
+      "movements": 4,
+      "duration": 30,
+      "instrumentation": "Flute, 2 clarinets, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "description": "The first of the final symphonic trilogy, opening with a stately slow introduction and notable for its warm, clarinet-coloured orchestration."
+    },
+    {
+      "kv": "K. 504",
+      "title": "Symphony No. 38 in D major 'Prague'",
+      "category": "symphonies",
+      "yearComposed": 1786,
+      "key": "D major",
+      "movements": 3,
+      "duration": 30,
+      "instrumentation": "2 flutes, 2 oboes, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "description": "Premiered in Prague in 1787, this symphony in three movements features an extended slow introduction and richly contrapuntal writing."
+    },
+    {
+      "kv": "K. 425",
+      "title": "Symphony No. 36 in C major 'Linz'",
+      "category": "symphonies",
+      "yearComposed": 1783,
+      "key": "C major",
+      "movements": 4,
+      "duration": 28,
+      "instrumentation": "2 oboes, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "description": "Composed in just a few days while Mozart was staying in Linz, this symphony is notable for being the first to open with a slow introduction."
+    },
+    {
+      "kv": "K. 201",
+      "title": "Symphony No. 29 in A major",
+      "category": "symphonies",
+      "yearComposed": 1774,
+      "key": "A major",
+      "movements": 4,
+      "duration": 27,
+      "instrumentation": "2 oboes, 2 horns, strings",
+      "description": "A landmark of Mozart's early maturity, admired for its lyrical first theme and tightly argued development."
+    },
+    {
+      "kv": "K. 492",
+      "title": "Le nozze di Figaro (The Marriage of Figaro)",
+      "category": "operas",
+      "yearComposed": 1786,
+      "key": "D major",
+      "duration": 180,
+      "instrumentation": "Soloists, chorus, orchestra",
+      "famous": true,
+      "description": "An opera buffa in four acts to a libretto by Lorenzo Da Ponte, after Beaumarchais. A comedy of intrigue among servants and nobility, it contains some of Mozart's most beloved arias and ensembles.",
+      "librettist": "Lorenzo Da Ponte",
+      "premiere": "Vienna, Burgtheater, 1 May 1786"
+    },
+    {
+      "kv": "K. 527",
+      "title": "Don Giovanni",
+      "category": "operas",
+      "yearComposed": 1787,
+      "key": "D minor",
+      "duration": 175,
+      "instrumentation": "Soloists, chorus, orchestra",
+      "famous": true,
+      "description": "A dramma giocoso in two acts to a libretto by Da Ponte, retelling the legend of the libertine Don Juan. It blends comedy and the supernatural, ending with the unrepentant Don dragged to hell.",
+      "librettist": "Lorenzo Da Ponte",
+      "premiere": "Prague, National Theatre, 29 October 1787"
+    },
+    {
+      "kv": "K. 620",
+      "title": "Die Zauberflöte (The Magic Flute)",
+      "category": "operas",
+      "yearComposed": 1791,
+      "key": "E-flat major",
+      "duration": 165,
+      "instrumentation": "Soloists, chorus, orchestra",
+      "famous": true,
+      "description": "A German Singspiel in two acts to a libretto by Emanuel Schikaneder, blending fairy-tale enchantment, Masonic symbolism, and comedy. Includes the Queen of the Night's celebrated coloratura aria.",
+      "librettist": "Emanuel Schikaneder",
+      "premiere": "Vienna, Theater auf der Wieden, 30 September 1791"
+    },
+    {
+      "kv": "K. 588",
+      "title": "Così fan tutte",
+      "category": "operas",
+      "yearComposed": 1790,
+      "key": "C major",
+      "duration": 180,
+      "instrumentation": "Soloists, chorus, orchestra",
+      "description": "An opera buffa in two acts, the third of the Mozart–Da Ponte collaborations, a witty and bittersweet study of fidelity and disguise.",
+      "librettist": "Lorenzo Da Ponte",
+      "premiere": "Vienna, Burgtheater, 26 January 1790"
+    },
+    {
+      "kv": "K. 384",
+      "title": "Die Entführung aus dem Serail (The Abduction from the Seraglio)",
+      "category": "operas",
+      "yearComposed": 1782,
+      "key": "C major",
+      "duration": 150,
+      "instrumentation": "Soloists, chorus, orchestra with 'Turkish' percussion",
+      "description": "A German Singspiel set in a Turkish palace, famed for its 'alla turca' colour and demanding vocal writing.",
+      "premiere": "Vienna, Burgtheater, 16 July 1782"
+    },
+    {
+      "kv": "K. 366",
+      "title": "Idomeneo, re di Creta",
+      "category": "operas",
+      "yearComposed": 1781,
+      "key": "D major",
+      "duration": 200,
+      "instrumentation": "Soloists, chorus, orchestra",
+      "description": "Mozart's first mature opera seria, composed for Munich, telling the story of the King of Crete and a vow to Neptune."
+    },
+    {
+      "kv": "K. 621",
+      "title": "La clemenza di Tito",
+      "category": "operas",
+      "yearComposed": 1791,
+      "key": "C major",
+      "duration": 145,
+      "instrumentation": "Soloists, chorus, orchestra",
+      "description": "An opera seria composed for the coronation of Leopold II as King of Bohemia, one of Mozart's last completed stage works."
+    },
+    {
+      "kv": "K. 467",
+      "title": "Piano Concerto No. 21 in C major",
+      "category": "concertos",
+      "yearComposed": 1785,
+      "key": "C major",
+      "movements": 3,
+      "duration": 28,
+      "instrumentation": "Solo piano, flute, 2 oboes, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "famous": true,
+      "description": "Famous especially for its serene F major Andante, which gained wide popularity through the 1967 film 'Elvira Madigan'."
+    },
+    {
+      "kv": "K. 466",
+      "title": "Piano Concerto No. 20 in D minor",
+      "category": "concertos",
+      "yearComposed": 1785,
+      "key": "D minor",
+      "movements": 3,
+      "duration": 31,
+      "instrumentation": "Solo piano, flute, 2 oboes, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "famous": true,
+      "description": "The first of Mozart's two minor-key piano concertos, stormy and dramatic; Beethoven admired it and wrote cadenzas for it."
+    },
+    {
+      "kv": "K. 488",
+      "title": "Piano Concerto No. 23 in A major",
+      "category": "concertos",
+      "yearComposed": 1786,
+      "key": "A major",
+      "movements": 3,
+      "duration": 26,
+      "instrumentation": "Solo piano, flute, 2 clarinets, 2 bassoons, 2 horns, strings",
+      "famous": true,
+      "description": "Lyrical and intimate, with a deeply melancholy Adagio in F-sharp minor, the only movement Mozart wrote in that key."
+    },
+    {
+      "kv": "K. 491",
+      "title": "Piano Concerto No. 24 in C minor",
+      "category": "concertos",
+      "yearComposed": 1786,
+      "key": "C minor",
+      "movements": 3,
+      "duration": 30,
+      "instrumentation": "Solo piano, flute, 2 oboes, 2 clarinets, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "description": "Mozart's largest orchestra in a concerto and his second minor-key piano concerto, dark and symphonic in scope."
+    },
+    {
+      "kv": "K. 595",
+      "title": "Piano Concerto No. 27 in B-flat major",
+      "category": "concertos",
+      "yearComposed": 1791,
+      "key": "B-flat major",
+      "movements": 3,
+      "duration": 30,
+      "instrumentation": "Solo piano, flute, 2 oboes, 2 bassoons, 2 horns, strings",
+      "description": "Mozart's last piano concerto, serene and valedictory in tone, premiered in the final year of his life."
+    },
+    {
+      "kv": "K. 622",
+      "title": "Clarinet Concerto in A major",
+      "category": "concertos",
+      "yearComposed": 1791,
+      "key": "A major",
+      "movements": 3,
+      "duration": 28,
+      "instrumentation": "Solo clarinet (basset clarinet), 2 flutes, 2 bassoons, 2 horns, strings",
+      "famous": true,
+      "description": "Written for clarinettist Anton Stadler, one of the last works Mozart completed; its Adagio is among his most sublime slow movements."
+    },
+    {
+      "kv": "K. 219",
+      "title": "Violin Concerto No. 5 in A major 'Turkish'",
+      "category": "concertos",
+      "yearComposed": 1775,
+      "key": "A major",
+      "movements": 3,
+      "duration": 30,
+      "instrumentation": "Solo violin, 2 oboes, 2 horns, strings",
+      "description": "The last of the five violin concertos, nicknamed 'Turkish' for the exotic episode in the finale."
+    },
+    {
+      "kv": "K. 364",
+      "title": "Sinfonia Concertante in E-flat major for Violin and Viola",
+      "category": "concertos",
+      "yearComposed": 1779,
+      "key": "E-flat major",
+      "movements": 3,
+      "duration": 30,
+      "instrumentation": "Solo violin, solo viola, 2 oboes, 2 horns, strings",
+      "famous": true,
+      "description": "A double concerto pairing violin and viola as equal soloists, with a profoundly expressive C minor Andante."
+    },
+    {
+      "kv": "K. 495",
+      "title": "Horn Concerto No. 4 in E-flat major",
+      "category": "concertos",
+      "yearComposed": 1786,
+      "key": "E-flat major",
+      "movements": 3,
+      "duration": 16,
+      "instrumentation": "Solo horn, 2 oboes, 2 horns, strings",
+      "description": "The last of the four horn concertos written for Mozart's friend Joseph Leutgeb, with a famously buoyant 'hunting' rondo finale."
+    },
+    {
+      "kv": "K. 581",
+      "title": "Clarinet Quintet in A major",
+      "category": "chamber",
+      "yearComposed": 1789,
+      "key": "A major",
+      "movements": 4,
+      "duration": 32,
+      "instrumentation": "Clarinet and string quartet",
+      "famous": true,
+      "description": "Written for Anton Stadler, this quintet is prized for the warm dialogue between clarinet and strings and its serene lyricism."
+    },
+    {
+      "kv": "K. 465",
+      "title": "String Quartet No. 19 in C major 'Dissonance'",
+      "category": "chamber",
+      "yearComposed": 1785,
+      "key": "C major",
+      "movements": 4,
+      "duration": 30,
+      "instrumentation": "Two violins, viola, cello",
+      "description": "The last of the six quartets dedicated to Haydn, notorious for its strikingly chromatic slow introduction."
+    },
+    {
+      "kv": "K. 458",
+      "title": "String Quartet No. 17 in B-flat major 'Hunt'",
+      "category": "chamber",
+      "yearComposed": 1784,
+      "key": "B-flat major",
+      "movements": 4,
+      "duration": 26,
+      "instrumentation": "Two violins, viola, cello",
+      "description": "One of the 'Haydn' Quartets, nicknamed 'Hunt' for the horn-call character of its opening theme."
+    },
+    {
+      "kv": "K. 516",
+      "title": "String Quintet No. 4 in G minor",
+      "category": "chamber",
+      "yearComposed": 1787,
+      "key": "G minor",
+      "movements": 4,
+      "duration": 35,
+      "instrumentation": "Two violins, two violas, cello",
+      "description": "A darkly expressive quintet, often paired with its C major companion, exploring the pathos of the G minor key."
+    },
+    {
+      "kv": "K. 626",
+      "title": "Requiem in D minor",
+      "category": "sacred",
+      "yearComposed": 1791,
+      "key": "D minor",
+      "movements": 14,
+      "duration": 55,
+      "instrumentation": "SATB soloists and chorus, basset horns, bassoons, trumpets, trombones, timpani, strings, organ",
+      "famous": true,
+      "description": "Mozart's final, unfinished work, a setting of the Latin Mass for the Dead commissioned anonymously. Left incomplete at his death, it was finished by his pupil Franz Xaver Süssmayr."
+    },
+    {
+      "kv": "K. 427",
+      "title": "Mass in C minor 'Great'",
+      "category": "sacred",
+      "yearComposed": 1783,
+      "key": "C minor",
+      "movements": 8,
+      "duration": 55,
+      "instrumentation": "SATB soloists and chorus, orchestra",
+      "description": "A large-scale, partly unfinished mass blending operatic vocal writing with Baroque-inspired counterpoint."
+    },
+    {
+      "kv": "K. 317",
+      "title": "Mass in C major 'Coronation'",
+      "category": "sacred",
+      "yearComposed": 1779,
+      "key": "C major",
+      "movements": 6,
+      "duration": 27,
+      "instrumentation": "SATB soloists and chorus, orchestra",
+      "description": "A festive Salzburg mass, later associated with imperial coronations, notable for its radiant 'Agnus Dei'."
+    },
+    {
+      "kv": "K. 618",
+      "title": "Ave verum corpus",
+      "category": "sacred",
+      "yearComposed": 1791,
+      "key": "D major",
+      "movements": 1,
+      "duration": 4,
+      "instrumentation": "SATB chorus, strings, organ",
+      "famous": true,
+      "description": "A short motet of profound simplicity and serenity, composed for the feast of Corpus Christi a few months before Mozart's death."
+    },
+    {
+      "kv": "K. 165",
+      "title": "Exsultate, jubilate",
+      "category": "sacred",
+      "yearComposed": 1773,
+      "key": "F major",
+      "movements": 3,
+      "duration": 15,
+      "instrumentation": "Solo soprano, orchestra",
+      "description": "A virtuosic sacred motet written for the castrato Venanzio Rauzzini, ending with the brilliant 'Alleluia'."
+    },
+    {
+      "kv": "K. 331",
+      "title": "Piano Sonata No. 11 in A major 'Alla Turca'",
+      "category": "keyboard",
+      "yearComposed": 1783,
+      "key": "A major",
+      "movements": 3,
+      "duration": 22,
+      "instrumentation": "Solo piano",
+      "famous": true,
+      "description": "Opens with a theme and variations and closes with the celebrated 'Rondo alla Turca', evoking Janissary band music."
+    },
+    {
+      "kv": "K. 545",
+      "title": "Piano Sonata No. 16 in C major 'Sonata facile'",
+      "category": "keyboard",
+      "yearComposed": 1788,
+      "key": "C major",
+      "movements": 3,
+      "duration": 14,
+      "instrumentation": "Solo piano",
+      "famous": true,
+      "description": "Described by Mozart as 'for beginners', this clear and graceful sonata is among the most widely studied of all piano works."
+    },
+    {
+      "kv": "K. 475",
+      "title": "Fantasia in C minor",
+      "category": "keyboard",
+      "yearComposed": 1785,
+      "key": "C minor",
+      "movements": 1,
+      "duration": 12,
+      "instrumentation": "Solo piano",
+      "description": "A free, dramatic fantasia often paired with the C minor sonata K. 457, ranging through bold harmonic territory."
+    },
+    {
+      "kv": "K. 448",
+      "title": "Sonata for Two Pianos in D major",
+      "category": "keyboard",
+      "yearComposed": 1781,
+      "key": "D major",
+      "movements": 3,
+      "duration": 24,
+      "instrumentation": "Two pianos",
+      "description": "A brilliant work for two equal pianos, written for Mozart to perform with his pupil Josephine von Aurnhammer."
+    },
+    {
+      "kv": "K. 525",
+      "title": "Eine kleine Nachtmusik (Serenade No. 13)",
+      "category": "serenades",
+      "yearComposed": 1787,
+      "key": "G major",
+      "movements": 4,
+      "duration": 18,
+      "instrumentation": "String ensemble (2 violins, viola, cello, double bass)",
+      "famous": true,
+      "description": "Perhaps Mozart's most recognisable work, a four-movement serenade of effortless charm, whose original second movement is lost."
+    },
+    {
+      "kv": "K. 361",
+      "title": "Serenade No. 10 in B-flat major 'Gran Partita'",
+      "category": "serenades",
+      "yearComposed": 1784,
+      "key": "B-flat major",
+      "movements": 7,
+      "duration": 50,
+      "instrumentation": "12 wind instruments and double bass",
+      "description": "A grand serenade in seven movements for an unusually large wind ensemble, celebrated for its sublime Adagio."
+    },
+    {
+      "kv": "K. 250",
+      "title": "Serenade No. 7 in D major 'Haffner'",
+      "category": "serenades",
+      "yearComposed": 1776,
+      "key": "D major",
+      "movements": 8,
+      "duration": 55,
+      "instrumentation": "2 flutes, 2 oboes, 2 bassoons, 2 horns, 2 trumpets, timpani, strings",
+      "description": "A large festive serenade composed for the wedding celebrations of the Haffner family of Salzburg."
+    }
+  ],
+  "notableCollections": {
+    "haydnQuartets": {
+      "title": "The 'Haydn' Quartets",
+      "yearPublished": 1785,
+      "totalWorks": 6,
+      "description": "Six string quartets (K. 387, 421, 428, 458, 464, 465) dedicated to Joseph Haydn, who declared Mozart the greatest composer he knew.",
+      "includes": ["K. 387", "K. 421", "K. 428", "K. 458", "K. 464", "K. 465"]
+    },
+    "daPonteOperas": {
+      "title": "The Da Ponte Operas",
+      "description": "Three operas to libretti by Lorenzo Da Ponte that stand among the summits of the operatic repertory.",
+      "includes": ["K. 492", "K. 527", "K. 588"]
+    },
+    "finalSymphonies": {
+      "title": "The Final Symphonic Trilogy",
+      "yearPublished": 1788,
+      "totalWorks": 3,
+      "description": "Symphonies Nos. 39, 40, and 41, composed within a few weeks in the summer of 1788, Mozart's last and greatest symphonies.",
+      "includes": ["K. 543", "K. 550", "K. 551"]
+    }
+  },
+  "manuscript_locations": [
+    "Berlin, Staatsbibliothek zu Berlin (Preußischer Kulturbesitz)",
+    "Kraków, Biblioteka Jagiellońska",
+    "Salzburg, Internationale Stiftung Mozarteum",
+    "Vienna, Österreichische Nationalbibliothek"
+  ],
+  "reference_recordings": [
+    {
+      "work": "Symphonies Nos. 39-41",
+      "performers": "The English Concert, Trevor Pinnock",
+      "label": "Archiv",
+      "year": 1993,
+      "notes": "Period-instrument recording of the final trilogy"
+    },
+    {
+      "work": "Le nozze di Figaro",
+      "performers": "Vienna Philharmonic, Carlos Kleiber / Erich Kleiber",
+      "label": "Decca",
+      "year": 1955,
+      "notes": "A classic studio recording of the opera"
+    },
+    {
+      "work": "Requiem K. 626",
+      "performers": "Academy of Ancient Music, Christopher Hogwood",
+      "label": "L'Oiseau-Lyre",
+      "year": 1984,
+      "notes": "Uses the Süssmayr completion with period instruments"
+    }
+  ],
+  "bibliography": [
+    "Köchel, Ludwig von. Chronologisch-thematisches Verzeichnis sämtlicher Tonwerke Wolfgang Amadé Mozarts. Leipzig, 1862.",
+    "Abert, Hermann. W. A. Mozart. Yale University Press, 2007.",
+    "Solomon, Maynard. Mozart: A Life. HarperCollins, 1995.",
+    "Sadie, Stanley. Mozart: The Early Years 1756-1781. Oxford University Press, 2006."
+  ],
+  "metadata": {
+    "lastUpdated": "2026-05-29",
+    "version": "1.0",
+    "completeness": "38 of ~626 works catalogued",
+    "nextUpdates": [
+      "Additional piano concertos (Nos. 9, 17, 19, 22, 25, 26)",
+      "Complete violin concerto cycle (Nos. 1-5)",
+      "Further string quartets and quintets",
+      "Early symphonies and Salzburg church music"
+    ]
+  }
+}

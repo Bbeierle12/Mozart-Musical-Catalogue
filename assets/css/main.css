@@ -608,6 +608,58 @@ section h2 {
     text-decoration: none;
 }
 
+.footer-disabled {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Resource article pages */
+.resource-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.resource-page .breadcrumb {
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.resource-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.resource-page th,
+.resource-page td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    border-bottom: var(--border-light);
+}
+
+.resource-page th {
+    background: var(--primary-color);
+    color: white;
+}
+
+.resource-page ul {
+    margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-lg);
+}
+
+.resource-page li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.resource-page .ref-list li {
+    list-style: none;
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: var(--spacing-xl);

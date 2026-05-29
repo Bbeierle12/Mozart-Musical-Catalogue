@@ -109,11 +109,11 @@ The project uses a comprehensive relational database structure:
 ## Composers
 
 ### Tier 1 (Priority)
-1. **Mozart** - Complete (626 works)
-2. **Bach** - In Progress (~1,100 works)
-3. **Handel** - Planned (~600 works)
-4. **Vivaldi** - Planned (~800 works)
-5. **Haydn** - Planned (~750 works)
+1. **Mozart** - Available (38 of ~626 works detailed, Köchel/K)
+2. **Bach** - Available (43 of ~1,128 works detailed, BWV)
+3. **Handel** - Available (29 of ~612 works detailed, HWV)
+4. **Vivaldi** - Available (33 of ~800 works detailed, RV)
+5. **Haydn** - Planned (~750 works, Hoboken)
 
 ### Tier 2 (Future)
 - Beethoven
@@ -150,6 +150,27 @@ The project uses a comprehensive relational database structure:
    ```
    http://localhost:8000
    ```
+
+> **Note:** Use a local web server (not `file://`). The pages fetch catalogue
+> data from `database/data/*.json` at runtime, which browsers block over the
+> `file://` protocol.
+
+### Running the Tests
+
+```bash
+npm install        # install dev dependencies
+npm test           # run the Jest unit, integration & data suites
+npm run test:e2e   # run the Playwright end-to-end tests (downloads browsers)
+```
+
+The Jest suite runs in CI on every push and pull request
+(see `.github/workflows/ci.yml`).
+
+### Deployment
+
+The site is a static bundle and deploys to **GitHub Pages** automatically on
+every push to `main` via `.github/workflows/deploy.yml`. To enable it, set
+**Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
 
 ### Development Setup
 

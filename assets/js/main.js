@@ -346,29 +346,87 @@ function closeModal(element) {
 
 /**
  * Load statistics dynamically
+ *
+ * Computes real figures from the catalogue and recordings data files,
+ * falling back to known totals if the data can't be fetched (e.g. when
+ * the page is opened directly from the filesystem).
  */
 function loadStatistics() {
-    // In production, this would fetch from an API
-    const stats = {
-        composers: 5,
-        works: 3876,
-        recordings: 1247,
-        manuscripts: 458
+    // Accurate fallback values (used when fetch is unavailable)
+    const fallback = {
+        composers: 4,
+        works: 3166,
+        detailed: 143,
+        recordings: 10
     };
 
-    // Animate statistics on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateStatistics(stats);
-                observer.unobserve(entry.target);
-            }
+    const animateOnScroll = (stats) => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStatistics(stats);
+                    observer.unobserve(entry.target);
+                }
+            });
         });
-    });
 
-    const statsSection = document.querySelector('.statistics-section');
-    if (statsSection) {
-        observer.observe(statsSection);
+        const statsSection = document.querySelector('.statistics-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    };
+
+    computeStatistics()
+        .then(stats => animateOnScroll(stats || fallback))
+        .catch(() => animateOnScroll(fallback));
+}
+
+/**
+ * Fetch the catalogue and recordings data and compute real statistics.
+ * Returns null if fetch isn't possible so callers can use their fallback.
+ */
+async function computeStatistics() {
+    if (typeof fetch !== 'function') return null;
+
+    const catalogues = [
+        'database/data/bach-bwv-catalogue.json',
+        'database/data/handel-hwv-catalogue.json',
+        'database/data/vivaldi-rv-catalogue.json',
+        'database/data/mozart-kv-catalogue.json'
+    ];
+
+    try {
+        const data = await Promise.all(
+            catalogues.map(url => fetch(url).then(r => {
+                if (!r.ok) throw new Error(`Failed to load ${url}`);
+                return r.json();
+            }))
+        );
+
+        let works = 0;
+        let detailed = 0;
+        data.forEach(c => {
+            works += (c.composer && c.composer.totalWorks) || 0;
+            detailed += Array.isArray(c.works) ? c.works.length : 0;
+        });
+
+        let recordings = 0;
+        try {
+            const rec = await fetch('database/data/recordings-database.json').then(r => r.json());
+            recordings = Array.isArray(rec.recordings) ? rec.recordings.length : 0;
+        } catch (e) {
+            recordings = 10;
+        }
+
+        return {
+            composers: data.length,
+            works,
+            detailed,
+            recordings
+        };
+    } catch (error) {
+        console.warn('Could not compute live statistics, using fallback:', error.message);
+        return null;
     }
 }
 
@@ -410,7 +468,7 @@ function animateNumber(statType, finalValue) {
  * Get stat index for animation
  */
 function getStatIndex(statType) {
-    const types = ['composers', 'works', 'recordings', 'manuscripts'];
+    const types = ['composers', 'works', 'detailed', 'recordings'];
     return types.indexOf(statType) + 1;
 }
 
