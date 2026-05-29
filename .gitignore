@@ -36,3 +36,12 @@ temp/
 # OS files
 Thumbs.db
 desktop.ini
+
+# mozart-fetch admin tool — generated audio & downloads (personal_use; never commit)
+tools/mozart-fetch/catalogue/
+tools/mozart-fetch/downloads/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/

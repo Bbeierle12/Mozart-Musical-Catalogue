@@ -30,6 +30,11 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Exclude non-site files from the published artifact
+        # The mozart-fetch admin tool and dev/test scaffolding are not part of
+        # the deployed website, so they are stripped before upload.
+        run: rm -rf tools tests .github node_modules
+
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:

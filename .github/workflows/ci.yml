@@ -24,3 +24,23 @@ jobs:
 
       - name: Run Jest test suite
         run: npm test
+
+  pipeline-tests:
+    name: mozart-fetch pure-logic tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run mozart-fetch tests
+        # Pure parsing/grouping logic only — no network or ffmpeg needed.
+        working-directory: tools/mozart-fetch
+        run: PYTHONPATH=. python -m pytest test_pure.py -q
