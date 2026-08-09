@@ -11,6 +11,207 @@ let itemsPerPage = 50;
 let filteredWorks = [];
 
 /**
+ * Which catalogue file backs each composer, and which field holds the
+ * catalogue number inside its works.
+ */
+const CATALOGUES = {
+    mozart: { file: 'mozart-kv-catalogue.json', key: 'kv' },
+    bach: { file: 'bach-bwv-catalogue.json', key: 'bwv' },
+    handel: { file: 'handel-hwv-catalogue.json', key: 'hwv' },
+    vivaldi: { file: 'vivaldi-rv-catalogue.json', key: 'rv' }
+};
+
+// Populated by initializeWorkLinks() once the page's catalogue has loaded.
+let workIndex = null;
+let workCatalogKey = null;
+
+/* ------------------- Work anchors & click-through ------------------- */
+
+/**
+ * Turn a catalogue number into a URL-safe anchor slug.
+ * "K. 525" -> "k-525", "BWV 1046" -> "bwv-1046"
+ * NOTE: search.js carries an identical copy (the pages load the two
+ * scripts independently); keep them in sync.
+ */
+function slugifyCatalogNumber(catalogNumber) {
+    return String(catalogNumber || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
+/** Build a slug -> work lookup for one catalogue. */
+function buildWorkIndex(works, catalogKey) {
+    const index = new Map();
+    (works || []).forEach(work => {
+        const slug = slugifyCatalogNumber(work[catalogKey]);
+        if (slug && !index.has(slug)) index.set(slug, work);
+    });
+    return index;
+}
+
+/**
+ * Which catalogued work, if any, does this text refer to?
+ *
+ * Table cells hold a bare catalogue number ("K. 525"); headings wrap one in
+ * prose ("Spring (La Primavera) - RV 269", "BWV 4: Christ lag..."). Both
+ * reduce to a slug, so a heading matches when a work's slug appears in it at
+ * token boundaries. A slug followed by "-<digits>" is a range heading
+ * ("Brandenburg Concertos (BWV 1046-1051)") and refers to a set, not to its
+ * first work, so it deliberately matches nothing.
+ */
+function findWorkInText(text, index) {
+    const haystack = slugifyCatalogNumber(text);
+    if (!haystack) return null;
+
+    const exact = index.get(haystack);
+    if (exact) return { slug: haystack, work: exact };
+
+    for (const [slug, work] of index) {
+        const pattern = new RegExp(`(^|-)${slug}(?!-\\d)($|-)`);
+        if (pattern.test(haystack)) return { slug, work };
+    }
+    return null;
+}
+
+/** Attach the modal to one element and give it the work's anchor id. */
+function linkElementToWork(element, slug, work, catalogKey) {
+    element.id = slug;
+    element.classList.add('work-link');
+    element.setAttribute('tabindex', '0');
+    element.addEventListener('click', () => openWorkModal(work, catalogKey));
+    element.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openWorkModal(work, catalogKey);
+        }
+    });
+}
+
+/**
+ * Make every static reference to a catalogued work clickable — table rows
+ * (first cell = catalogue number) and section headings that name one.
+ * Scanned in document order, first mention wins; anything that doesn't
+ * resolve to a work is left exactly as authored.
+ */
+function enhanceWorkReferences(index, catalogKey) {
+    const seen = new Set();
+    const selector = '.works-table tr, .content-section h3, .content-section h4';
+
+    document.querySelectorAll(selector).forEach(element => {
+        const isRow = element.tagName === 'TR';
+
+        // A row is identified by its first data cell; a heading by its text.
+        const cell = isRow ? element.querySelector('td') : null;
+        if (isRow && !cell) return;
+        const text = isRow ? cell.textContent : element.textContent;
+
+        const match = findWorkInText(text, index);
+        if (!match || seen.has(match.slug)) return;
+
+        seen.add(match.slug);
+        linkElementToWork(element, match.slug, match.work, catalogKey);
+    });
+}
+
+/** Open the modal for whatever work the URL hash points at, if any. */
+function openWorkFromHash(index, catalogKey) {
+    const slug = (window.location.hash || '').replace(/^#/, '');
+    if (!slug) return;
+
+    const work = index.get(slug);
+    if (!work) return;
+
+    const row = document.getElementById(slug);
+    if (row && typeof row.scrollIntoView === 'function') {
+        row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    openWorkModal(work, catalogKey);
+}
+
+/** Render and show the work detail modal. */
+function openWorkModal(work, catalogKey) {
+    let modal = document.getElementById('work-modal');
+    if (!modal) {
+        createWorkModal();
+        modal = document.getElementById('work-modal');
+    }
+
+    const catalogNumber = work[catalogKey] || work.catalogNumber || '';
+    const detail = Array.isArray(work.movements_detail) ? work.movements_detail
+        : Array.isArray(work.movementList) ? work.movementList
+            : null;
+
+    document.getElementById('modal-title').textContent =
+        catalogNumber ? `${work.title} (${catalogNumber})` : work.title;
+
+    const rows = [
+        ['Catalogue Number', catalogNumber],
+        ['German Title', work.germanTitle],
+        ['Category', work.category],
+        ['Key', work.key],
+        ['Year Composed', work.yearComposed],
+        ['Movements', typeof work.movements === 'number' ? work.movements : null],
+        ['Duration', work.duration ? `${work.duration} minutes` : null],
+        ['Instrumentation', work.instrumentation],
+        ['Description', work.description]
+    ].filter(([, value]) => value !== null && value !== undefined && value !== '');
+
+    document.getElementById('modal-details').innerHTML = `
+        <div class="work-details">
+            ${rows.map(([label, value]) => `
+                <div class="detail-group"><strong>${label}:</strong> ${value}</div>
+            `).join('')}
+            ${detail ? `
+                <div class="detail-group">
+                    <strong>Movements:</strong>
+                    <ol class="movement-list">
+                        ${detail.map(m => `<li>${m}</li>`).join('')}
+                    </ol>
+                </div>
+            ` : ''}
+            <div class="modal-actions">
+                <a class="btn-primary find-recordings"
+                   href="../../search.html?q=${encodeURIComponent(catalogNumber || work.title)}">
+                    Search recordings &rarr;
+                </a>
+            </div>
+        </div>
+    `;
+
+    modal.classList.remove('hidden');
+}
+
+/**
+ * Wire up click-through on a composer page. Reads the composer from
+ * <body data-composer> and enhances whatever static tables it finds.
+ */
+async function initializeWorkLinks() {
+    const composerId = document.body && document.body.dataset
+        ? document.body.dataset.composer : null;
+    const catalogue = composerId ? CATALOGUES[composerId] : null;
+    if (!catalogue) return;
+
+    let data;
+    try {
+        const response = await fetch(`../../database/data/${catalogue.file}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        data = await response.json();
+    } catch (error) {
+        // Static tables still render; they just stay unclickable.
+        console.warn('Work links unavailable:', error.message);
+        return;
+    }
+
+    workIndex = buildWorkIndex(data.works, catalogue.key);
+    workCatalogKey = catalogue.key;
+
+    enhanceWorkReferences(workIndex, workCatalogKey);
+    openWorkFromHash(workIndex, workCatalogKey);
+    window.addEventListener('hashchange', () => openWorkFromHash(workIndex, workCatalogKey));
+}
+
+/**
  * Initialize composer page with data
  */
 async function initializeComposer(composerId) {
@@ -19,7 +220,11 @@ async function initializeComposer(composerId) {
         showLoadingState(true);
 
         // Load composer data from JSON
-        const response = await fetch(`../../database/data/${composerId}-bwv-catalogue.json`);
+        const catalogue = CATALOGUES[composerId];
+        if (!catalogue) {
+            throw new Error(`Unknown composer: ${composerId}`);
+        }
+        const response = await fetch(`../../database/data/${catalogue.file}`);
         if (!response.ok) {
             throw new Error(`Failed to load ${composerId} data`);
         }
@@ -107,83 +312,18 @@ function renderWorksTable() {
  * Show work details in modal
  */
 function showWorkDetails(workId) {
-    const work = composerData.works.find(w => w.bwv === workId);
-    if (!work) return;
-
-    const modal = document.getElementById('work-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDetails = document.getElementById('modal-details');
-
-    if (!modal || !modalTitle || !modalDetails) {
-        createWorkModal();
-        return showWorkDetails(workId);
+    // Preferred path: the index built by initializeWorkLinks(), which is what
+    // the inline onclick="showWorkDetails('HWV 56')" handlers rely on.
+    if (workIndex) {
+        const indexed = workIndex.get(slugifyCatalogNumber(workId));
+        if (indexed) return openWorkModal(indexed, workCatalogKey);
     }
 
-    modalTitle.textContent = `${work.title} (${work.bwv})`;
-
-    modalDetails.innerHTML = `
-        <div class="work-details">
-            <div class="detail-group">
-                <strong>Catalogue Number:</strong> ${work.bwv}
-            </div>
-            ${work.germanTitle ? `
-                <div class="detail-group">
-                    <strong>German Title:</strong> ${work.germanTitle}
-                </div>
-            ` : ''}
-            <div class="detail-group">
-                <strong>Category:</strong> ${work.category}
-            </div>
-            ${work.key ? `
-                <div class="detail-group">
-                    <strong>Key:</strong> ${work.key}
-                </div>
-            ` : ''}
-            ${work.yearComposed ? `
-                <div class="detail-group">
-                    <strong>Year Composed:</strong> ${work.yearComposed}
-                </div>
-            ` : ''}
-            ${work.movements ? `
-                <div class="detail-group">
-                    <strong>Number of Movements:</strong> ${work.movements}
-                </div>
-            ` : ''}
-            ${work.duration ? `
-                <div class="detail-group">
-                    <strong>Duration:</strong> ${work.duration} minutes
-                </div>
-            ` : ''}
-            ${work.instrumentation ? `
-                <div class="detail-group">
-                    <strong>Instrumentation:</strong> ${work.instrumentation}
-                </div>
-            ` : ''}
-            ${work.description ? `
-                <div class="detail-group">
-                    <strong>Description:</strong> ${work.description}
-                </div>
-            ` : ''}
-            ${work.movementList ? `
-                <div class="detail-group">
-                    <strong>Movements:</strong>
-                    <ol class="movement-list">
-                        ${work.movementList.map(mov => `<li>${mov}</li>`).join('')}
-                    </ol>
-                </div>
-            ` : ''}
-            <div class="modal-actions">
-                <button class="btn-primary" onclick="searchRecordings('${work.bwv}')">
-                    Find Recordings
-                </button>
-                <button class="btn-secondary" onclick="viewManuscripts('${work.bwv}')">
-                    View Manuscripts
-                </button>
-            </div>
-        </div>
-    `;
-
-    modal.classList.remove('hidden');
+    // Legacy path: pages driven by initializeComposer().
+    if (!composerData || !composerData.works) return;
+    const catalogKey = (CATALOGUES[composerData.composer && composerData.composer.id] || {}).key;
+    const work = composerData.works.find(w => w[catalogKey] === workId);
+    if (work) openWorkModal(work, catalogKey);
 }
 
 /**
@@ -462,28 +602,6 @@ function initializeNavigation() {
 }
 
 /**
- * Search for recordings of a work
- */
-function searchRecordings(workId) {
-    // In production, this would query the recordings database
-    console.log(`Searching for recordings of ${workId}`);
-
-    // For now, show a placeholder message
-    alert(`Recording search for ${workId} will be available soon.`);
-}
-
-/**
- * View manuscripts for a work
- */
-function viewManuscripts(workId) {
-    // In production, this would query the manuscripts database
-    console.log(`Viewing manuscripts for ${workId}`);
-
-    // For now, show a placeholder message
-    alert(`Manuscript information for ${workId} will be available soon.`);
-}
-
-/**
  * Utility function to update element text content
  */
 function updateElement(selector, content) {
@@ -564,11 +682,35 @@ function debounce(func, wait) {
  * Export functions for global use
  */
 window.initializeComposer = initializeComposer;
+window.initializeWorkLinks = initializeWorkLinks;
 window.showWorkDetails = showWorkDetails;
 window.closeWorkModal = closeWorkModal;
 window.filterWorks = filterWorks;
 window.resetFilters = resetFilters;
 window.previousPage = previousPage;
 window.nextPage = nextPage;
-window.searchRecordings = searchRecordings;
-window.viewManuscripts = viewManuscripts;
+
+// Every composer page carries <body data-composer="...">; wire up the
+// work anchors and modal as soon as the DOM is ready.
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeWorkLinks);
+    } else {
+        initializeWorkLinks();
+    }
+}
+
+// Exposed for the Jest suite; harmless in the browser.
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        CATALOGUES,
+        slugifyCatalogNumber,
+        buildWorkIndex,
+        enhanceWorkReferences,
+        openWorkFromHash,
+        openWorkModal,
+        initializeWorkLinks,
+        showWorkDetails,
+        closeWorkModal
+    };
+}

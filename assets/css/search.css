@@ -539,6 +539,17 @@
     font-size: 1.05rem;
 }
 
+/* The title links straight to the work's anchor on its composer page. */
+.result-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.result-card h3 a:hover,
+.result-card h3 a:focus {
+    text-decoration: underline;
+}
+
 .result-card .result-meta {
     color: var(--text-secondary);
     font-size: 0.9rem;

@@ -98,14 +98,29 @@ function renderResults(html) {
     if (results) results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+/**
+ * Turn a catalogue number into a URL-safe anchor slug.
+ * NOTE: composer-common.js carries an identical copy (the pages load the two
+ * scripts independently); keep them in sync.
+ */
+function slugifyCatalogNumber(catalogNumber) {
+    return String(catalogNumber || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}
+
 function workCard(w) {
+    const cataloguePage = `composers/${w.composerId}/index.html`;
+    const slug = slugifyCatalogNumber(w.catalogNumber);
+    const workUrl = slug ? `${cataloguePage}#${slug}` : cataloguePage;
     return `
         <div class="result-card">
-            <h3>${w.title}</h3>
+            <h3><a href="${workUrl}">${w.title}</a></h3>
             <p class="result-meta">${[w.catalogNumber, w.composer].filter(Boolean).join(' · ')}</p>
             <p class="result-meta">${[w.category, w.key, w.yearComposed].filter(Boolean).join(' · ')}</p>
             ${w.instrumentation ? `<p class="result-sub">${w.instrumentation}</p>` : ''}
-            <a href="composers/${w.composerId}/index.html">View ${w.composer} catalogue →</a>
+            <a href="${cataloguePage}">View ${w.composer} catalogue →</a>
         </div>`;
 }
 
@@ -297,3 +312,8 @@ window.searchWorks = searchWorks;
 window.searchComposers = searchComposers;
 window.searchRecordings = searchRecordings;
 window.searchManuscripts = searchManuscripts;
+
+// Exposed for the Jest suite; harmless in the browser.
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { slugifyCatalogNumber, workCard, composerCard, loadData };
+}
